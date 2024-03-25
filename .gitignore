@@ -1,2 +1,4 @@
-__pycache__/*
-rough/*
+__pycache__/
+rough*
+*.zip
+server2.py

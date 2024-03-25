@@ -8,7 +8,7 @@ class RaftClient:
     def __init__(self, node_addresses):
         self.node_addresses = node_addresses
         self.leader_id = -1
-    
+
 
     def find_leader(self):
         request = "GETLEADER"
@@ -20,11 +20,22 @@ class RaftClient:
             print(f"Leader ID: {self.leader_id}")
 
 
-    def __send_request__(self, id, address, request):
+    def __send_request__(self, id, address, request, isLeader=False):
         try:
             with grpc.insecure_channel(address) as channel:
                 stub = raft_pb2_grpc.RaftNodeStub(channel)
                 response = stub.ServeClient(raft_pb2.ServeClientRequest(request=request))
+                # if isLeader and self.leader_id >= 0:
+                    # Case 1: No network partition. Leader's ID is correct with the client. (Perfect system)
+                    # Case 2: No network partition. Leader's ID is incorrect with the client. (Leader changed)
+                        # Subcase 1: Previous leader is alive with its state changed to follower.
+                        # Subcase 2: Previous leader is dead.
+                    # Case 3: Network partition. Leader's ID is incorrect with the client. (Leader changed)
+                        # Subcase 1: Leader is in the minority partition. Thus, will not update/access the db. Will query and return success=False.
+                        # Subcase 2: Leader is in the majority partition. Thus, will continue to be the leader. Will query and return success=True.
+                    
+ 
+                # if leader not known, or leader id not changed or leader id changed to -1
                 if response.success:
                     self.leader_id = response.leader_id
                     return True, response
@@ -35,7 +46,7 @@ class RaftClient:
         except grpc.RpcError as e:
             print(e.details())
             return False, None
-    
+
 
     def send_request(self, request):
         for id, address in self.node_addresses.items():
@@ -149,4 +160,7 @@ def serve():
 
 
 if __name__ == '__main__':
-    serve()
+    try:
+        serve()
+    except KeyboardInterrupt:
+        print("\nClient stopped!")
