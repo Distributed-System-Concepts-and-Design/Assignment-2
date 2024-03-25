@@ -5,107 +5,84 @@ import threading
 
 
 class RaftClient:
-    def __init__(self, node_addresses):
-        self.node_addresses = node_addresses
+    def __init__(self, node_addresses) -> None:
         self.leader_id = -1
-
-
-    def find_leader(self):
-        request = "GETLEADER"
-        # _, _, success = self.send_request_to_leader(request)
-        success, _ = self.send_request(request)
-        if not success:
-            print("Error: Could not get leader")
-        else:
-            print(f"Leader ID: {self.leader_id}")
-
-
-    def __send_request__(self, id, address, request, isLeader=False):
-        try:
-            with grpc.insecure_channel(address) as channel:
-                stub = raft_pb2_grpc.RaftNodeStub(channel)
+        self.leader_found = False
+        self.node_addresses = node_addresses
+    
+    
+    def __check_leader_status__(self, id, address, request):
+        with grpc.insecure_channel(address) as channel:
+            stub = raft_pb2_grpc.RaftNodeStub(channel)
+            try:
                 response = stub.ServeClient(raft_pb2.ServeClientRequest(request=request))
-                # if isLeader and self.leader_id >= 0:
-                    # Case 1: No network partition. Leader's ID is correct with the client. (Perfect system)
-                    # Case 2: No network partition. Leader's ID is incorrect with the client. (Leader changed)
-                        # Subcase 1: Previous leader is alive with its state changed to follower.
-                        # Subcase 2: Previous leader is dead.
-                    # Case 3: Network partition. Leader's ID is incorrect with the client. (Leader changed)
-                        # Subcase 1: Leader is in the minority partition. Thus, will not update/access the db. Will query and return success=False.
-                        # Subcase 2: Leader is in the majority partition. Thus, will continue to be the leader. Will query and return success=True.
-                    
- 
-                # if leader not known, or leader id not changed or leader id changed to -1
-                if response.success:
-                    self.leader_id = response.leader_id
+                if response.leader_id >= 0:     # Leader found in this node
                     return True, response
                 else:
-                    print("Failed")
-                    return False, None
-
-        except grpc.RpcError as e:
-            print(e.details())
-            return False, None
-
-
-    def send_request(self, request):
-        for id, address in self.node_addresses.items():
-            success, response = self.__send_request__(id, address, request)
+                    return False, response
+            except grpc.RpcError as e:
+                return False, None
+    
+    
+    def __send_request__(self, id, address, request):
+        with grpc.insecure_channel(address) as channel:
+            stub = raft_pb2_grpc.RaftNodeStub(channel)
+            try:
+                response = stub.ServeClient(raft_pb2.ServeClientRequest(request=request))
+                if response.success:
+                    return True, response
+                else:
+                    return False, response
+            except grpc.RpcError as e:
+                return False, None
+    
+    
+    def find_leader(self, request="GETLEADER"):
+        if self.leader_id not in self.node_addresses.keys():       # Client does not have the leader
+            for id, address in self.node_addresses.items():
+                
+                success, response = self.__check_leader_status__(id, address, request)
+                if success:
+                    self.leader_id = response.leader_id
+                    self.leader_found = True
+                    print("Leader:", self.leader_id)
+                    return
+            
+            if self.leader_found == False:      # Raft does not have a leader
+                print("Leader not present in Raft!")
+        
+        else:
+            success, response = self.__check_leader_status__(self.leader_id, self.node_addresses[self.leader_id], request)
             if success:
-                return True, response
-        self.leader_id = -1
-        return False, response
-
-
-    # def send_request_to_leader(self, request):
-    #     # print("*"*50, self.leader_id)
-    #     if self.leader_id >= 0:
-    #         # Connect to the leader address directly
-    #         leader_address = self.node_addresses[self.leader_id]
-    #         with grpc.insecure_channel(leader_address) as channel:
-    #             stub = raft_pb2_grpc.RaftNodeStub(channel)
-    #             try:
-    #                 response = stub.ServeClient(raft_pb2.ServeClientRequest(request=request))
-    #                 if response.leader_id != self.leader_id:
-    #                     self.leader_id = response.leader_id
-    #                 print("response:", response)
-    #                 return response.data, response.leader_id, response.success
-    #             except grpc.RpcError as e:
-    #                 print(f"Error: {e}")
-    #                 return None, None, False
-    #     else:
-    #         # Connect to all nodes in parallel and get the leader
-    #         threads = []
-    #         responses = []
-    #         for id, address in self.node_addresses.items():                
-    #             success, led = self.send_request(id, address, request)
-    #             # print(f"###Sent request to node {id}", led, success)
-    #             if success:
-    #                 return None, None, True
-
-    #             # thread = threading.Thread(target=send_request, args=(id, address, request))
-    #             # threads.append(thread)
-    #             # thread.start()
-
-
-    #         # Break the threads if the leader is found
-    #         # for thread in threads:
-    #         #     thread.join()
-    #         if self.leader_id != -1:
-    #             return None, None, False
-    #         else:
-    #             return None, None, True
+                if self.leader_id != response.leader_id:        # Leader changed
+                    self.leader_id = response.leader_id
+                    self.leader_found = True
+            else:
+                self.leader_id = -1         # Client's POV leader is down
+                self.leader_found = False
+                self.find_leader()                   
 
 
     def get(self, key):
+        # self.find_leader()
+        # print("Leader:", self.leader_id)
+        if not self.leader_found:
+            return
+        
         request = f"GET {key}"
-        _, response = self.send_request(request)
+        # print(self.node_addresses)
+        _, response = self.__send_request__(self.leader_id, self.node_addresses[self.leader_id], request)
         print(f"{key} = {response.data}")
 
 
-    def set(self, key, value):                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+    def set(self, key, value):
+        self.find_leader()
+        print("Leader:", self.leader_id)
+        if not self.leader_found:
+            return
+        
         request = f"SET {key} {value}"
-        _, response = self.send_request(request)
+        _, response = self.__send_request__(self.leader_id, self.node_addresses[self.leader_id], request)
         print(response.data)
 
 
@@ -127,7 +104,7 @@ def fetch_server_address():
             for line in lines:
                 parts = line.strip().split()
                 id, address, port = parts[0], parts[1], parts[2]
-                node_addresses[id] = f'{str(address)}:{str(port)}'
+                node_addresses[int(id)] = f'{str(address)}:{str(port)}'
 
     return node_addresses
 
