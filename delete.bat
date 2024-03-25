@@ -1,2 +1,2 @@
 @echo off
-rm -r logs_node_*
+@RD /S /Q logs_node_*

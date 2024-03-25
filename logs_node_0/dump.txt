@@ -1,0 +1,128 @@
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Node 0 (leader) received a GET erp request.
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Node 0 (leader) received a SET erp 32 request.
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Node 0 (leader) received a SET per qw request.
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Node 0 (leader) received a SET def hello request.
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 became the leader for term 1.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 became the leader for term 2.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 became the leader for term 3.
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Node 0 (leader) received a SET abc 121 request.
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Node 0 (leader) received a SET hehe 1222 request.
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
