@@ -18,26 +18,23 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
         self.leader_id = -1
         self.leader_lease = 5
         self.SERVERS_INFO = node_addresses
+        self.heartbeat_duration = 1
+        self.no_of_heartbeats = 0
 
-        self.heartbeat_duration = random.randint(100, 200) / 100
         self.timer = Timer(self.heartbeat_duration, self.leader)
         self.id = id
         self.threads = []
         self.timeout = 0
-        self.no_of_heartbeats = 0
         
         if self.id == 0:
             self.leader_id = self.id
             self.state = "Leader"
-        # else:
-        #     self.leader_id = 1
 
         self.start()
     
 
     def start(self):
         # Checks if it is the leader or a follower
-        # print("Starting server", self.id)
         if self.state == "Leader":
             # Using multitimers
             self.leader()
@@ -55,7 +52,6 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
                 print(f"Can not send heartbeats from a {self.state} node!")
                 return
 
-            self.heartbeat_duration = random.randint(100, 200) / 100
             print(f"Sending heartbeats from node {self.id}!")
 
             self.threads = []
@@ -77,12 +73,11 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
                 self.no_of_heartbeats = 0
                 print(f"Majority of the nodes are down! Leader {self.id} will stop!")
                 self.leader_election()  # Perform leader election
-                # self.current_term += 1
             else:
                 self.no_of_heartbeats = 0
                 # Restart the timer. For now, it is set to heartbeat_duration
                 end_time = time.time()
-                if end_time - start_time >= self.leader_lease:
+                if end_time - start_time+self.heartbeat_duration >= self.leader_lease:
                     # Leader Lease expired. Perform leader election
                     print("Leader Lease expired!")
                     self.leader_election()
@@ -97,7 +92,7 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
 
         except Exception as e:
             print(f"Leader {self.id} stopped!")
-    
+
 
     def leader_election(self):
         self.current_term += 1
@@ -107,7 +102,7 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
         """
         Does the necessary actions after being declared as a follower.
         """
-        pass
+        self.state = "Follower"
 
 
     def heartbeat(self, id, address):
@@ -212,6 +207,7 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
         # handle get, set, and getleader
         print(f"Received request: {request.request}")
         if request.request == "GETLEADER":
+            # self.log.append("NO OP "+str(self.current_term))
             return raft_pb2.ServeClientResponse(data="NA", leader_id=self.leader_id, success=True)
         
         elif request.request.split()[0] == "GET":
