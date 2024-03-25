@@ -41,14 +41,19 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
             os.mkdir(f"logs_node_{self.id}")
         
         # Create files logs.txt, metadata.txt and dump.txt if they do not exist
-        if not os.path.exists(f"logs_node_{self.id}/logs.txt"):
-            with open(f"logs_node_{self.id}/logs.txt", "w") as f:
+        path = f"logs_node_{self.id}" + "/logs.txt"
+        if not os.path.exists(path):
+            with open(path, "w") as f:
                 f.write("")
-        if not os.path.exists(f"logs_node_{self.id}/metadata.txt"):
-            with open(f"logs_node_{self.id}/metadata.txt", "w") as f:
+        
+        path = path.split('/')[0] + "/metadata.txt"
+        if not os.path.exists(path):
+            with open(path, "w") as f:
                 f.write("")
-        if not os.path.exists(f"logs_node_{self.id}/dump.txt"):
-            with open(f"logs_node_{self.id}/dump.txt", "w") as f:
+        
+        path = path.split('/')[0] + "/dump.txt"
+        if not os.path.exists(path):
+            with open(path, "w") as f:
                 f.write("")
         
         # Checks if it is the leader or a follower
