@@ -12,6 +12,7 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
         self.dict = {}
         self.current_term = 0
         self.voted_for = None
+        self.total_votes = 0
         self.log = []
         self.dump = []
         self.commit_length = 0
@@ -20,19 +21,21 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
         self.leader_id = -1
         self.leader_lease = 5
         self.SERVERS_INFO = node_addresses
-        self.heartbeat_duration = 1
+        self.heartbeat_duration = 2
         self.no_of_heartbeats = 0
+        self.heartbeat_received = False
 
         self.timer = Timer(self.heartbeat_duration, self.leader)
         self.id = id
         self.threads = []
-        self.timeout = 0
+        self.timeout = random.randint(300, 450) / 100
         
-        if self.id == 0:
-            self.leader_id = self.id
-            self.state = "Leader"
+        # if self.id == 0:
+        #     self.leader_id = self.id
+        #     self.state = "Leader"
 
         self.start()
+        print(f"Node {self.id} started!")
     
 
     def start(self):
@@ -70,7 +73,7 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
             path = ""
 
         print("-"*25)
-        print(content)
+        # print(content)
         if path == "":
             print("No path provided for writing content!")
             return
@@ -81,7 +84,7 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
 
     def leader(self):
         """
-        Does the necessary actions after being declared as a leader.
+        Sends heartbeats to all the servers in the network. If the leader lease expires, then it starts the leader election. If majority of the nodes are down, then it stops.
         """
         try:
             # self.write_content(f"Node {self.id} became the leader for term {self.current_term}", dump=True)
@@ -107,7 +110,7 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
                 t.join()
             
             # Check if majority of the nodes are alive
-            print("No of heartbeats:", self.no_of_heartbeats)
+            # print("No of heartbeats:", self.no_of_heartbeats)
 
             if self.no_of_heartbeats <= len(self.SERVERS_INFO) // 2:
                 self.no_of_heartbeats = 0
@@ -125,26 +128,12 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
                     self.leader_election()
                 else:
                     # Renew Leader Lease by restarting the timer.
-                    print("Renewing Leader Lease!")
-            
-            self.timer = Timer(self.heartbeat_duration, self.leader)
-            self.timer.start()
+                    # print("Renewing Leader Lease!")
+                    self.timer = Timer(self.heartbeat_duration, self.leader)
+                    self.timer.start()
 
         except Exception as e:
             print(f"Leader {self.id} stopped!")
-
-
-    def leader_election(self):
-        self.current_term += 1
-        self.write_content(f"Node {self.id} became the leader for term {self.current_term}.", dump=True)
-
-    
-    def follower(self):
-        """
-        Does the necessary actions after being declared as a follower.
-        """
-        self.state = "Follower"
-
 
     def heartbeat(self, id, address):
         """
@@ -179,6 +168,107 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
             return None
 
 
+    def leader_election(self):
+        """
+        Performs leader election.
+        """
+        # print(f"Leader election started by node {self.id}!")
+        if self.heartbeat_received:
+            self.state = "Follower"
+            print(f"Received heartbeat from the leader! Node {self.id} is not the leader!")
+            return
+        
+        self.current_term += 1
+        print(f"Node {self.id} Timeout! Leader election will be started for Term {self.current_term}!")
+        self.state = "Candidate"
+        self.voted_for = self.id
+        self.timer.cancel()
+
+        self.threads = []
+        for id, address in self.SERVERS_INFO.items():
+            if id == self.id:
+                continue
+            self.threads.append(Thread(target=self.request_vote, args=(id, address)))
+
+        for t in self.threads:
+            t.start()
+
+        for t in self.threads:
+            t.join()
+        
+        votes = self.total_votes
+        self.total_votes = 0
+
+        if votes > len(self.SERVERS_INFO) // 2:
+            # Wait for leader lease duration to receive heartbeats from the leader
+            start_time = time.time()
+            while time.time() - start_time < self.leader_lease:
+                if self.heartbeat_received:
+                    # self.heartbeat_received = False
+                    break
+            if self.heartbeat_received:
+                self.heartbeat_received = False
+                self.state = "Follower"
+                print(f"Received heartbeat from the leader! Node {self.id} is not the leader!")
+            else:
+                self.state = "Leader"
+                self.leader_id = self.id
+                print(f"Node {self.id} is the leader!")
+                self.leader()
+        else:
+            self.state = "Follower"
+            print(f"Node {self.id} is not the leader!")
+        
+        self.start()
+    
+    def request_vote(self, id, address):
+        """
+        Sends a request to all the servers in the network to vote for the current server.
+        """
+        try:
+            channel = grpc.insecure_channel(address)
+            stub = raft_pb2_grpc.RaftNodeStub(channel)
+            if len(self.log) == 0:
+                request = raft_pb2.RequestVoteRequest(term=self.current_term, candidateId=self.id, lastLogIndex=0, lastLogTerm=0)
+            else:
+                request = raft_pb2.RequestVoteRequest(term=self.current_term, candidateId=self.id, lastLogIndex=len(self.log)-1, lastLogTerm=self.log[-1].term)
+            response = stub.RequestVote(request)
+            # print("Response:", response.term, response.voteGranted, response.leaseDuration)
+            if response.voteGranted:
+                # print(f"Vote granted by node {id}!")
+                self.total_votes += 1
+        except Exception as e:
+            print(f"Error in requesting vote from node {id}!")
+
+    def follower(self):
+        """
+        Waits for the heartbeat from the leader. If the heartbeat is not received, then it starts the leader election.
+        """
+        try:
+            # while self.state == "Follower":
+            self.timer=Timer(self.timeout, self.leader_election)
+            self.timer.start()
+                # self.timer.join()                
+
+            # while True:
+            #     start_time = time.time()
+            #     while time.time() - start_time < self.timeout:
+            #         if self.heartbeat_received:
+            #             self.heartbeat_received = False
+            #             break
+            #     if self.heartbeat_received:
+            #         continue
+            #     else:
+            #         print(f"Node {self.id} timed out! Leader election will be started for Term {self.current_term}!")
+            #         self.leader_election()
+            #         if self.state == "Leader":
+            #             break
+        except Exception as e:
+            print(e)
+            print(f"Follower {self.id} stopped!")
+
+
+    
     def AppendEntries(self, request, context):
         try:
             self.write_content(f"Node {self.id} accepted AppendEntries RPC from {request.leaderId}.", dump=True)
@@ -213,19 +303,32 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
     def RequestVote(self, request, context):
         response = raft_pb2.RequestVoteResponse()
         response.term = self.current_term
+        response.leaseDuration = self.leader_lease
+        # print(f"Received vote request from node {request.candidateId} with term {request.term}!")
 
         if request.term < self.current_term:
-            response.vote_granted = False
+            response.voteGranted = False
+            # print(f"Vote NOT granted to node {request.candidateId}!")
             return response
+        # else:
+        #     self.current_term = request.term
+        #     self.voted_for = None
+        #     response.voteGranted = True
+        #     return response
 
-        if self.voted_for is None or self.voted_for == request.candidate_id:
-            if self.is_up_to_date(request.last_log_index, request.last_log_term):
-                self.voted_for = request.candidate_id
-                response.vote_granted = True
+        if self.voted_for is None or self.voted_for == self.id:
+            if self.is_up_to_date(request.lastLogIndex, request.lastLogTerm):
+                self.voted_for = request.candidateId
+                response.voteGranted = True
             else:
-                response.vote_granted = False
+                response.voteGranted = False
         else:
-            response.vote_granted = False
+            response.voteGranted = False
+
+        # if response.voteGranted:
+        #     print(f"Vote granted to node {request.candidateId}!")
+        # else:
+        #     print(f"Vote NOT granted to node {request.candidateId}!")
 
         return response
     
