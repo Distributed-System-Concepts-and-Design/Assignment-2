@@ -30,7 +30,7 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
         self.id = id
         self.threads = []
         self.timeout = random.randint(300, 750) / 100
-        print("Timeout:", self.timeout)
+        # print("Timeout:", self.timeout)
         
         self.handle_persistence()
         self.start()
@@ -102,7 +102,7 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
                     self.dump.append(line.strip())
 
 
-    def start(self):        
+    def start(self):
         # Checks if it is the leader or a follower
         if self.state == "Leader":
             # Using multitimers
@@ -197,7 +197,7 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
             if self.state != "Leader":
                 print(f"Can not send heartbeat from a {self.state} node!")
                 return
-            
+
             channel = grpc.insecure_channel(address)
             stub = raft_pb2_grpc.RaftNodeStub(channel)
  
@@ -229,7 +229,7 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
         self.leader_id = -1
         self.heartbeat_received = False
         self.no_of_heartbeats = 1
-    
+
 
     def restart_timer(self):
         """
@@ -292,7 +292,7 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
                 self.state = "Leader"
                 self.leader_id = self.id
                 print(f"Node {self.id} is the leader!")
-                self.leader()
+                
         else:
             self.state = "Follower"
             print(f"No leader elected in term {self.current_term}!")
@@ -362,7 +362,7 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
             for i in range(len(logEntries)-1, -1, -1):
                 if logEntries[i] in self.log:
                     break
-            
+        
             # Append the entries that are not present in the log.
             for j in range(i+1, len(logEntries)):
                 if self.id == self.leader_id:
@@ -393,9 +393,10 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
         
         
         # Restarting the timer for the follower
-        self.timer.cancel()
         print("Timeout:", self.timeout)
-        self.timer = Timer(self.timeout, self.leader_election)
+        self.timer.cancel()
+        self.timer = Timer(self.timeout+2, self.leader_election)
+        # self.restart_timer()
         # self.timer.start()
 
         # print(f"Received vote request from node {request.candidateId} with term {request.term}!")
@@ -404,13 +405,14 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
             print("Candidate term is less than current term!")
             response.voteGranted = False
             # print(f"Vote NOT granted to node {request.candidateId}!")
+            print("Voted for:", self.voted_for, "ID:", self.id, "Candidate ID:", request.candidateId)
             return response
         # else:
         #     self.current_term = request.term
         #     self.voted_for = None
         #     response.voteGranted = True
         #     return response
-        print("Trying to vote!")
+        # print("Trying to vote!")
         if self.voted_for is None or self.voted_for == self.id:
             if self.is_up_to_date(request.lastLogIndex, request.lastLogTerm):
                 self.voted_for = request.candidateId
@@ -421,6 +423,7 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
             print(f"Already voted for node {self.voted_for}!")
             response.voteGranted = False
 
+        print("Voted for:", self.voted_for, "ID:", self.id, "Candidate ID:", request.candidateId)
         self.voted_for = None
         return response
     
