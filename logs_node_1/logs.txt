@@ -1,7 +1,0 @@
-GET erp 0
-NO OP 0
-SET erp 32 0
-SET per qw 0
-SET def hello 0
-NO OP 3
-SET abc 121 3
