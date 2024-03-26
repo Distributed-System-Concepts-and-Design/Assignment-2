@@ -29,7 +29,7 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
         self.timer = Timer(self.heartbeat_duration, self.leader)
         self.id = id
         self.threads = []
-        self.timeout = random.randint(300, 750) / 100
+        self.timeout = random.randint(500, 1000) / 100
         # print("Timeout:", self.timeout)
         
         self.handle_persistence()
