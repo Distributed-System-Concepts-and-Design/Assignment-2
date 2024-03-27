@@ -21,7 +21,6 @@ class RaftClient:
                 else:
                     return False, response
             except grpc.RpcError as e:
-                print(e)
                 return False, None
     
     
@@ -35,7 +34,6 @@ class RaftClient:
                 else:
                     return False, response
             except grpc.RpcError as e:
-                print(e)
                 return False, None
     
     
