@@ -15,6 +15,8 @@ message AppendEntriesRequest {
     int32 leaderId = 2;
     string logEntries = 3;
     float leaseDuration = 4;
+    int32 prevLogIndex = 5;
+    string prevLogTerm = 6;
 }
 
 // Response to appending entries to the log
