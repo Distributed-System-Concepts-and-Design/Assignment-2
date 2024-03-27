@@ -1,0 +1,500 @@
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 2 in term 1.
+Vote granted for Node 0 by Node 1 in term 1.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 2.
+Vote granted for Node 0 by Node 2 in term 2.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 3.
+Vote granted for Node 0 by Node 2 in term 3.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 2 in term 4.
+Vote granted for Node 0 by Node 1 in term 4.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 5.
+Vote granted for Node 0 by Node 2 in term 5.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 2 in term 6.
+Vote granted for Node 0 by Node 1 in term 6.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 2 in term 7.
+Vote granted for Node 0 by Node 1 in term 7.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 2 in term 8.
+Vote granted for Node 0 by Node 1 in term 8.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 9.
+Vote granted for Node 0 by Node 2 in term 9.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 2.
+Error occurred while sending RPC to Node 1.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 2 in term 10.
+Vote granted for Node 0 by Node 1 in term 10.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 11.
+Vote granted for Node 0 by Node 2 in term 11.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 2 in term 12.
+Vote granted for Node 0 by Node 1 in term 12.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 13.
+Vote granted for Node 0 by Node 2 in term 13.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 2 in term 14.
+Vote granted for Node 0 by Node 1 in term 14.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 15.
+Vote granted for Node 0 by Node 2 in term 15.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 16.
+Vote granted for Node 0 by Node 2 in term 16.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 2 in term 17.
+Vote granted for Node 0 by Node 1 in term 17.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 2 in term 18.
+Vote granted for Node 0 by Node 1 in term 18.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 19.
+Vote granted for Node 0 by Node 2 in term 19.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 2.
+Error occurred while sending RPC to Node 1.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 20.
+Vote granted for Node 0 by Node 2 in term 20.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 2 in term 21.
+Vote granted for Node 0 by Node 1 in term 21.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 22.
+Vote granted for Node 0 by Node 2 in term 22.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 23.
+Vote granted for Node 0 by Node 2 in term 23.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 24.
+Vote granted for Node 0 by Node 2 in term 24.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 25.
+Vote granted for Node 0 by Node 2 in term 25.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 2.
+Error occurred while sending RPC to Node 1.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 2 in term 26.
+Vote granted for Node 0 by Node 1 in term 26.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 2 in term 27.
+Vote granted for Node 0 by Node 1 in term 27.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 28.
+Vote granted for Node 0 by Node 2 in term 28.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 29.
+Vote granted for Node 0 by Node 2 in term 29.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 2.
+Error occurred while sending RPC to Node 1.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 30.
+Vote granted for Node 0 by Node 2 in term 30.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 31.
+Vote granted for Node 0 by Node 2 in term 31.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 2 in term 32.
+Vote granted for Node 0 by Node 1 in term 32.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 33.
+Vote granted for Node 0 by Node 2 in term 33.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 34.
+Vote granted for Node 0 by Node 2 in term 34.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 35.
+Vote granted for Node 0 by Node 2 in term 35.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 2.
+Error occurred while sending RPC to Node 1.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 2 in term 36.
+Vote granted for Node 0 by Node 1 in term 36.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 37.
+Vote granted for Node 0 by Node 2 in term 37.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 38.
+Vote granted for Node 0 by Node 2 in term 38.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 39.
+Vote granted for Node 0 by Node 2 in term 39.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 40.
+Vote granted for Node 0 by Node 2 in term 40.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 41.
+Vote granted for Node 0 by Node 2 in term 41.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 42.
+Vote granted for Node 0 by Node 2 in term 42.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 43.
+Vote granted for Node 0 by Node 2 in term 43.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 2 in term 44.
+Vote granted for Node 0 by Node 1 in term 44.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 45.
+Vote granted for Node 0 by Node 2 in term 45.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 2.
+Error occurred while sending RPC to Node 1.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 46.
+Vote granted for Node 0 by Node 2 in term 46.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 2.
+Error occurred while sending RPC to Node 1.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 47.
+Vote granted for Node 0 by Node 2 in term 47.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 48.
+Vote granted for Node 0 by Node 2 in term 48.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 2.
+Error occurred while sending RPC to Node 1.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 49.
+Vote granted for Node 0 by Node 2 in term 49.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 2.
+Error occurred while sending RPC to Node 1.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 50.
+Vote granted for Node 0 by Node 2 in term 50.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 51.
+Vote granted for Node 0 by Node 2 in term 51.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 52.
+Vote granted for Node 0 by Node 2 in term 52.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 53.
+Vote granted for Node 0 by Node 2 in term 53.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 2 in term 54.
+Vote granted for Node 0 by Node 1 in term 54.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 2.
+Error occurred while sending RPC to Node 1.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 55.
+Vote granted for Node 0 by Node 2 in term 55.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 56.
+Vote granted for Node 0 by Node 2 in term 56.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 2.
+Error occurred while sending RPC to Node 1.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 57.
+Vote granted for Node 0 by Node 2 in term 57.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 58.
+Vote granted for Node 0 by Node 2 in term 58.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 59.
+Vote granted for Node 0 by Node 2 in term 59.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 60.
+Vote granted for Node 0 by Node 2 in term 60.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 61.
+Vote granted for Node 0 by Node 2 in term 61.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 62.
+Vote granted for Node 0 by Node 2 in term 62.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 63.
+Vote granted for Node 0 by Node 2 in term 63.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 64.
+Vote granted for Node 0 by Node 2 in term 64.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 2.
+Error occurred while sending RPC to Node 1.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 2 in term 65.
+Vote granted for Node 0 by Node 1 in term 65.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 66.
+Vote granted for Node 0 by Node 2 in term 66.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 67.
+Vote granted for Node 0 by Node 2 in term 67.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 68.
+Vote granted for Node 0 by Node 2 in term 68.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 69.
+Vote granted for Node 0 by Node 2 in term 69.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 70.
+Vote granted for Node 0 by Node 2 in term 70.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 2.
+Error occurred while sending RPC to Node 1.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 71.
+Vote granted for Node 0 by Node 2 in term 71.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 2.
+Error occurred while sending RPC to Node 1.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 72.
+Vote denied for Node 0 by Node 2 in term 72.
