@@ -1,0 +1,211 @@
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 2 in term 1.
+Vote granted for Node 0 by Node 1 in term 1.
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease renewal failed. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 2.
+Vote denied for Node 0 by Node 2 in term 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 (follower) committed the entry GET we 1 to the state machine
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 (follower) committed the entry NO OP 1 to the state machine
+Node 0 (follower) committed the entry SET we 32 1 to the state machine
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 (follower) committed the entry GET 1 1 to the state machine
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 (follower) committed the entry GET we 1 to the state machine
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 (follower) committed the entry NO OP 1 to the state machine
+Node 0 (follower) committed the entry SET qw 14 1 to the state machine
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 2.
+Vote denied for Node 0 by Node 2 in term 2.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 2.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 2.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 2.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 2.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 2.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 2.
+Node 0 (leader) received a GET qw request.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 2.
+Node 0 (leader) committed the entry GET qw 2 to the state machine
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 2.
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Node 0 (leader) received a SET abc 32 request.
+Leader 0 sending heartbeat & Renewing Lease
+Node 0 (leader) committed the entry NO OP 2 to the state machine
+Node 0 (leader) committed the entry SET abc 32 2 to the state machine
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease

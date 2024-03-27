@@ -33,13 +33,6 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
         self.threads = []
         self.timeout_duration = (600, 2000)
         self.timeout = random.randint(self.timeout_duration[0], self.timeout_duration[1]) / 100
-        # print("Timeout:", self.timeout)
-        # if self.id == 0:
-        #     self.timeout = 5
-        # elif self.id == 1:
-        #     self.timeout = 7
-        # elif self.id == 2:
-        #     self.timeout = 9
 
         self.start_time = time.time()
         self.end_time = time.time()
@@ -53,7 +46,7 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
         # Create directory logs_node_id if it does not exist
         if not os.path.exists(f"logs_node_{self.id}"):
             os.mkdir(f"logs_node_{self.id}")
-        
+
 
         # Create files logs.txt, metadata.txt and dump.txt if they do not exist
         path = f"logs_node_{self.id}" + "/logs.txt"
@@ -79,6 +72,8 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
             # Initialise current_term with the last term in the logs
             if len(self.log) > 0:
                 self.current_term = int(self.log[-1].split()[-1])
+                self.commitLogIndex = len(self.log) - 1
+                self.commitLogTerm = self.log[-1].split()[-1]
             
             # print("NODE_ID:", self.id)
             # print("DICT:", self.dict)
@@ -138,8 +133,8 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
             print("-"*25)
             print(content)
         
-        # with open(path, "a") as f:
-        #     f.write(content + "\n")
+        with open(path, "a") as f:
+            f.write(content + "\n")
 
 
     def leader(self):
@@ -190,7 +185,18 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
                     self.leader_election()
                 else:
                     # Renew Leader Lease by restarting the timer.
-                    # print("Renewing Leader Lease!")
+                    
+                    # It will commit the log entries that are not committed yet.
+                    for i in range(self.commitLogIndex+1, len(self.log)):
+                        if "SET" in self.log[i]:
+                            key, value = self.log[i].split()[1], self.log[i].split()[2]
+                            self.dict[key] = value
+                        self.write_content(self.log[i], logs=True)
+                        self.write_content(f"Node {self.id} (leader) committed the entry {self.log[i]} to the state machine", dump=True)
+                        self.commitLogIndex = i
+                        self.commitLogTerm = self.log[i]
+
+
                     self.timer = Timer(self.heartbeat_duration, self.leader)
                     self.timer.start()
 
@@ -212,13 +218,24 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
 
             channel = grpc.insecure_channel(address)
             stub = raft_pb2_grpc.RaftNodeStub(channel)
- 
-            # Formatting the entries
-            entries = '\n'.join(self.log)
-            # logEntries can be a dictionary with id as s.no and value as the log entry. But currently it is treated as list of strings (logs).
-            request = raft_pb2.AppendEntriesRequest(term=self.current_term, leaderId=self.id, 
-                                                    logEntries=entries, leaseDuration=self.leader_lease,
+            
+            request = raft_pb2.AppendEntriesRequest(term=self.current_term, leaderId=self.id, leaseDuration=self.leader_lease,
                                                     commitLogIndex=self.commitLogIndex, commitLogTerm=self.commitLogTerm)
+ 
+
+            for log in self.log:
+                item = request.logEntries.add()
+                item.entries = log
+            
+            
+            # # Formatting the entries
+            # entries = '\n'.join(self.log)
+
+            # logEntries can be a dictionary with id as s.no and value as the log entry. But currently it is treated as list of strings (logs).
+            # request = raft_pb2.AppendEntriesRequest(term=self.current_term, leaderId=self.id, 
+            #                                         logEntries=entries, leaseDuration=self.leader_lease,
+            #                                         commitLogIndex=self.commitLogIndex, commitLogTerm=self.commitLogTerm)
+            
             # print("Request:", request.term, request.leaderId, request.logEntries, request.leaseDuration)
             response = stub.AppendEntries(request)
             if response.success:
@@ -246,12 +263,14 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
             self.restart_timer()
 
             # Update the log
-            logEntries = request.logEntries.split('\n')
+            # logEntries = request.logEntries.split('\n')
+            logEntries = [entry.entries for entry in request.logEntries]
             index = request.commitLogIndex
             term = request.commitLogTerm
 
-            # Update the follower's log. This code assumes that everything before the commitLogIndex is in sync with the majority of the nodes.
+            print("LeaderCommitIndex:", index, "FollowerCommitIndex:", self.commitLogIndex, "LengthLogEntries:", len(logEntries))
             if self.commitLogIndex < index:
+            # Update the follower's log. This code assumes that everything before the commitLogIndex is in sync with the majority of the nodes.
                 # Follower has some entries that leader has committed but the follower has not committed yet.
                 for i in range(self.commitLogIndex+1, index+1):
                     # Follower does not have the entry that leader has committed. May happen to crashed/out-of-sync followers. Commit entries that leader has committed.
@@ -442,8 +461,11 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
             lastTerm = int(self.log[-1].split()[-1])
 
         logOK = (request.lastLogTerm > lastTerm) or (request.lastLogTerm == lastTerm and request.lastLogIndex >= len(self.log)-1)
-
-        if request.term == self.current_term and logOK and (self.voted_for is None or self.voted_for == request.candidateId):
+        
+        print(f"Log OK {self.current_term}:", logOK, "Last Log Term:", lastTerm, "Last Log Index:", len(self.log)-1, "Request Last Log Term:", request.lastLogTerm, "Request Last Log Index:", request.lastLogIndex)
+        print(f"Log OK {self.current_term}:", (request.lastLogTerm > lastTerm), (request.lastLogTerm == lastTerm), request.lastLogIndex >= len(self.log)-1)
+        
+        if request.term == self.current_term and (self.voted_for is None or self.voted_for == request.candidateId):
             response.voteGranted = True
             self.voted_for = request.candidateId
         else:
@@ -453,7 +475,7 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
         self.timer = Timer(self.timeout, self.leader_election)
         self.timer.start()
         self.start_time = time.time()
-        print("Voted for:", self.voted_for, "ID:", self.id, "Candidate ID:", request.candidateId, "Term:", request.term, "Time:", self.start_time, "Actual Time:", time.time())
+        print("Voted for:", self.voted_for, "ID:", self.id, "Candidate ID:", request.candidateId, "Updated Term:", request.term, "Time:", self.start_time, "Actual Time:", time.time())
         # print(self.timer.finished)
 
         return response
@@ -465,9 +487,11 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
         if self.state != "Leader":
             return raft_pb2.ServeClientResponse(data="Not the leader!", leader_id=self.leader_id, success=False)
         else:
+            self.write_content(f"Node {self.leader_id} (leader) received a {request} request.", dump=True)
+            
             log = "GET " + key + " " + str(self.current_term)
             self.log.append(log)
-            self.write_content(f"Node {self.leader_id} (leader) received a {request} request.", dump=True)
+
             return raft_pb2.ServeClientResponse(data=self.dict.get(key, "Key not present!"), leader_id=self.leader_id, success=True)
 
 
@@ -479,10 +503,10 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
             return raft_pb2.ServeClientResponse(data="Not the leader!", leader_id=self.leader_id, success=False)
         else:
             self.write_content(f"Node {self.leader_id} (leader) received a {request} request.", dump=True)
-            self.dict[key] = value
+            
             log = "SET " + key + " " + value + " " + str(self.current_term)
             self.log.append(log)
-            print(self.log)
+
             return raft_pb2.ServeClientResponse(data="Value set succesfully!", leader_id=self.leader_id, success=True)
 
 
@@ -490,42 +514,17 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
         # handle get, set, and getleader
         print(f"Received request: {request.request}")
         req = request.request.split()[0]
+
         if req == "GETLEADER":
-            self.log.append("NO OP "+str(self.current_term))
+            if self.id == self.leader_id:
+                self.log.append("NO OP "+str(self.current_term))
             return raft_pb2.ServeClientResponse(data="NA", leader_id=self.leader_id, success=True)
         
         elif req == "GET":
-            request = request.request
-            print("GET request!")
-            key = request.split()[1]
-
-            if self.state != "Leader":
-                return raft_pb2.ServeClientResponse(data="Not the leader!", leader_id=self.leader_id, success=False)
-            else:
-                log = "GET " + key + " " + str(self.current_term)
-                self.log.append(log)
-                self.write_content(f"Node {self.leader_id} (leader) received a {request} request.", dump=True)
-                return raft_pb2.ServeClientResponse(data=self.dict.get(key, "Key not present!"), leader_id=self.leader_id, success=True)
-                return self.handle_get_request(request.request)
+            return self.handle_get_request(request.request)
         
         elif req == "SET":
-            request = request.request
-            key = request.split()[1]
-            value = request.split()[2]
-            # print("SET request!: {key} {value}")
-            if self.state != "Leader":
-                return raft_pb2.ServeClientResponse(data="Not the leader!", leader_id=self.leader_id, success=False)
-            else:
-                self.write_content(f"Node {self.leader_id} (leader) received a {request} request.", dump=True)
-                # print('setting dict')
-                self.dict[key] = value
-                # print(self.dict)
-                log = "SET " + key + " " + value + " " + str(self.current_term)
-                # print("LOG:", log)
-                self.log.append(log)
-                # print(self.log)
-                return raft_pb2.ServeClientResponse(data="Value set succesfully!", leader_id=self.leader_id, success=True)
-                return self.handle_set_request(request.request)
+            return self.handle_set_request(request.request)
 
 
 def run_server():

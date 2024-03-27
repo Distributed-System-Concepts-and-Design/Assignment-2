@@ -1,0 +1,10 @@
+GET we 1
+NO OP 1
+SET we 32 1
+GET 1 1
+GET we 1
+NO OP 1
+SET qw 14 1
+GET qw 2
+NO OP 2
+SET abc 32 2

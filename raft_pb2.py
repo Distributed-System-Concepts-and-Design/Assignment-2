@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\nraft.proto\"\x90\x01\n\x14\x41ppendEntriesRequest\x12\x0c\n\x04term\x18\x01 \x01(\x05\x12\x10\n\x08leaderId\x18\x02 \x01(\x05\x12\x12\n\nlogEntries\x18\x03 \x01(\t\x12\x15\n\rleaseDuration\x18\x04 \x01(\x02\x12\x16\n\x0e\x63ommitLogIndex\x18\x05 \x01(\x05\x12\x15\n\rcommitLogTerm\x18\x06 \x01(\t\"6\n\x15\x41ppendEntriesResponse\x12\x0c\n\x04term\x18\x01 \x01(\x05\x12\x0f\n\x07success\x18\x02 \x01(\x08\"b\n\x12RequestVoteRequest\x12\x0c\n\x04term\x18\x01 \x01(\x05\x12\x13\n\x0b\x63\x61ndidateId\x18\x02 \x01(\x05\x12\x14\n\x0clastLogIndex\x18\x03 \x01(\x05\x12\x13\n\x0blastLogTerm\x18\x04 \x01(\x05\"O\n\x13RequestVoteResponse\x12\x0c\n\x04term\x18\x01 \x01(\x05\x12\x13\n\x0bvoteGranted\x18\x02 \x01(\x08\x12\x15\n\rleaseDuration\x18\x03 \x01(\x05\")\n\x08LogEntry\x12\x0c\n\x04term\x18\x01 \x01(\x05\x12\x0f\n\x07\x63ommand\x18\x02 \x01(\t\"%\n\x12ServeClientRequest\x12\x0f\n\x07request\x18\x01 \x01(\t\"G\n\x13ServeClientResponse\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\t\x12\x11\n\tleader_id\x18\x02 \x01(\x05\x12\x0f\n\x07success\x18\x03 \x01(\x08\x32\xc4\x01\n\x08RaftNode\x12@\n\rAppendEntries\x12\x15.AppendEntriesRequest\x1a\x16.AppendEntriesResponse\"\x00\x12:\n\x0bRequestVote\x12\x13.RequestVoteRequest\x1a\x14.RequestVoteResponse\"\x00\x12:\n\x0bServeClient\x12\x13.ServeClientRequest\x1a\x14.ServeClientResponse\"\x00\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\nraft.proto\"\xc3\x01\n\x14\x41ppendEntriesRequest\x12\x0c\n\x04term\x18\x01 \x01(\x05\x12\x10\n\x08leaderId\x18\x02 \x01(\x05\x12-\n\nlogEntries\x18\x03 \x03(\x0b\x32\x19.AppendEntriesRequest.Log\x12\x15\n\rleaseDuration\x18\x04 \x01(\x02\x12\x16\n\x0e\x63ommitLogIndex\x18\x05 \x01(\x05\x12\x15\n\rcommitLogTerm\x18\x06 \x01(\t\x1a\x16\n\x03Log\x12\x0f\n\x07\x65ntries\x18\x01 \x01(\t\"6\n\x15\x41ppendEntriesResponse\x12\x0c\n\x04term\x18\x01 \x01(\x05\x12\x0f\n\x07success\x18\x02 \x01(\x08\"b\n\x12RequestVoteRequest\x12\x0c\n\x04term\x18\x01 \x01(\x05\x12\x13\n\x0b\x63\x61ndidateId\x18\x02 \x01(\x05\x12\x14\n\x0clastLogIndex\x18\x03 \x01(\x05\x12\x13\n\x0blastLogTerm\x18\x04 \x01(\x05\"O\n\x13RequestVoteResponse\x12\x0c\n\x04term\x18\x01 \x01(\x05\x12\x13\n\x0bvoteGranted\x18\x02 \x01(\x08\x12\x15\n\rleaseDuration\x18\x03 \x01(\x05\"%\n\x12ServeClientRequest\x12\x0f\n\x07request\x18\x01 \x01(\t\"G\n\x13ServeClientResponse\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\t\x12\x11\n\tleader_id\x18\x02 \x01(\x05\x12\x0f\n\x07success\x18\x03 \x01(\x08\x32\xc4\x01\n\x08RaftNode\x12@\n\rAppendEntries\x12\x15.AppendEntriesRequest\x1a\x16.AppendEntriesResponse\"\x00\x12:\n\x0bRequestVote\x12\x13.RequestVoteRequest\x1a\x14.RequestVoteResponse\"\x00\x12:\n\x0bServeClient\x12\x13.ServeClientRequest\x1a\x14.ServeClientResponse\"\x00\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -22,19 +22,19 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'raft_pb2', _globals)
 if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   _globals['_APPENDENTRIESREQUEST']._serialized_start=15
-  _globals['_APPENDENTRIESREQUEST']._serialized_end=159
-  _globals['_APPENDENTRIESRESPONSE']._serialized_start=161
-  _globals['_APPENDENTRIESRESPONSE']._serialized_end=215
-  _globals['_REQUESTVOTEREQUEST']._serialized_start=217
-  _globals['_REQUESTVOTEREQUEST']._serialized_end=315
-  _globals['_REQUESTVOTERESPONSE']._serialized_start=317
-  _globals['_REQUESTVOTERESPONSE']._serialized_end=396
-  _globals['_LOGENTRY']._serialized_start=398
-  _globals['_LOGENTRY']._serialized_end=439
-  _globals['_SERVECLIENTREQUEST']._serialized_start=441
-  _globals['_SERVECLIENTREQUEST']._serialized_end=478
-  _globals['_SERVECLIENTRESPONSE']._serialized_start=480
-  _globals['_SERVECLIENTRESPONSE']._serialized_end=551
-  _globals['_RAFTNODE']._serialized_start=554
-  _globals['_RAFTNODE']._serialized_end=750
+  _globals['_APPENDENTRIESREQUEST']._serialized_end=210
+  _globals['_APPENDENTRIESREQUEST_LOG']._serialized_start=188
+  _globals['_APPENDENTRIESREQUEST_LOG']._serialized_end=210
+  _globals['_APPENDENTRIESRESPONSE']._serialized_start=212
+  _globals['_APPENDENTRIESRESPONSE']._serialized_end=266
+  _globals['_REQUESTVOTEREQUEST']._serialized_start=268
+  _globals['_REQUESTVOTEREQUEST']._serialized_end=366
+  _globals['_REQUESTVOTERESPONSE']._serialized_start=368
+  _globals['_REQUESTVOTERESPONSE']._serialized_end=447
+  _globals['_SERVECLIENTREQUEST']._serialized_start=449
+  _globals['_SERVECLIENTREQUEST']._serialized_end=486
+  _globals['_SERVECLIENTRESPONSE']._serialized_start=488
+  _globals['_SERVECLIENTRESPONSE']._serialized_end=559
+  _globals['_RAFTNODE']._serialized_start=562
+  _globals['_RAFTNODE']._serialized_end=758
 # @@protoc_insertion_point(module_scope)

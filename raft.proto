@@ -13,7 +13,10 @@ service RaftNode {
 message AppendEntriesRequest {
     int32 term = 1;
     int32 leaderId = 2;
-    string logEntries = 3;
+    message Log {
+        string entries = 1;
+    }
+    repeated Log logEntries = 3;
     float leaseDuration = 4;
     int32 commitLogIndex = 5;
     string commitLogTerm = 6;
@@ -38,12 +41,6 @@ message RequestVoteResponse {
     int32 term = 1;
     bool voteGranted = 2;
     int32 leaseDuration = 3;
-}
-
-// Log entry in the Raft log
-message LogEntry {
-    int32 term = 1;
-    string command = 2;
 }
 
 
