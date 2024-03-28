@@ -14,6 +14,135 @@ Node 2 accepted AppendEntries RPC from 0.
 Node 2 accepted AppendEntries RPC from 0.
 Node 2 accepted AppendEntries RPC from 0.
 Node 2 accepted AppendEntries RPC from 0.
+Node 2 (follower) committed the entry NO OP 1 to the state machine
+Node 2 (follower) committed the entry SET a 1 1 to the state machine
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 election timer timed out, Starting election.
+Vote granted for Node 2 by Node 1 in term 4.
+Vote denied for Node 2 by Node 0 in term 4.
+Leader 2 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 0.
+Leader 2 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 0.
+Leader 2 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 0.
+Leader 2 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 0.
+Leader 2 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 0.
+Leader 2 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 0.
+Leader 2 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 0.
+Leader 2 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 0.
+Leader 2 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 0.
+Leader 2 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 0.
+Leader 2 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 0.
+Leader 2 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 0.
+Leader 2 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 0.
+Leader 2 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 0.
+Leader 2 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 0.
+Leader 2 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 0.
+Leader 2 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 0.
+Leader 2 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 0.
+Leader 2 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 0.
+Leader 2 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 0.
+Leader 2 lease expired. Stepping Down.
+Node 2 election timer timed out, Starting election.
+Vote denied for Node 2 by Node 0 in term 5.
+Vote denied for Node 2 by Node 1 in term 5.
+Node 2 election timer timed out, Starting election.
+Vote denied for Node 2 by Node 1 in term 6.
+Vote denied for Node 2 by Node 0 in term 6.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
 Node 2 accepted AppendEntries RPC from 0.
 Node 2 accepted AppendEntries RPC from 0.
 Node 2 accepted AppendEntries RPC from 0.
@@ -52,119 +181,23 @@ Node 2 accepted AppendEntries RPC from 0.
 Node 2 accepted AppendEntries RPC from 0.
 Node 2 accepted AppendEntries RPC from 0.
 Node 2 election timer timed out, Starting election.
-Vote granted for Node 2 by Node 0 in term 1.
-Vote granted for Node 2 by Node 1 in term 1.
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Node 2 (leader) received a GET we request.
-Leader 2 sending heartbeat & Renewing Lease
-Node 2 (leader) committed the entry GET we 1 to the state machine
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Node 2 (leader) received a SET we 32 request.
-Leader 2 sending heartbeat & Renewing Lease
-Node 2 (leader) committed the entry NO OP 1 to the state machine
-Node 2 (leader) committed the entry SET we 32 1 to the state machine
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Node 2 (leader) received a GET 1 request.
-Leader 2 sending heartbeat & Renewing Lease
-Node 2 (leader) committed the entry GET 1 1 to the state machine
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Node 2 (leader) received a GET we request.
-Leader 2 sending heartbeat & Renewing Lease
-Node 2 (leader) committed the entry GET we 1 to the state machine
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Error occurred while sending RPC to Node 0.
-Leader 2 sending heartbeat & Renewing Lease
-Error occurred while sending RPC to Node 0.
-Leader 2 sending heartbeat & Renewing Lease
-Node 2 (leader) received a SET qw 14 request.
-Error occurred while sending RPC to Node 0.
-Node 2 (leader) committed the entry NO OP 1 to the state machine
-Node 2 (leader) committed the entry SET qw 14 1 to the state machine
-Leader 2 sending heartbeat & Renewing Lease
-Error occurred while sending RPC to Node 0.
-Leader 2 sending heartbeat & Renewing Lease
-Error occurred while sending RPC to Node 0.
-Leader 2 sending heartbeat & Renewing Lease
-Error occurred while sending RPC to Node 0.
-Leader 2 sending heartbeat & Renewing Lease
-Error occurred while sending RPC to Node 0.
-Leader 2 sending heartbeat & Renewing Lease
-Error occurred while sending RPC to Node 0.
-Leader 2 sending heartbeat & Renewing Lease
-Error occurred while sending RPC to Node 0.
-Leader 2 sending heartbeat & Renewing Lease
-Error occurred while sending RPC to Node 0.
-Leader 2 sending heartbeat & Renewing Lease
-Error occurred while sending RPC to Node 0.
-Leader 2 sending heartbeat & Renewing Lease
-Error occurred while sending RPC to Node 0.
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Leader 2 sending heartbeat & Renewing Lease
-Node 2 accepted AppendEntries RPC from 0.
-Node 2 (follower) committed the entry GET qw 2 to the state machine
+Vote granted for Node 2 by Node 1 in term 5.
+Vote denied for Node 2 by Node 0 in term 5.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 election timer timed out, Starting election.
+Vote granted for Node 2 by Node 0 in term 7.
+Vote denied for Node 2 by Node 1 in term 7.
 Node 2 accepted AppendEntries RPC from 0.
 Node 2 accepted AppendEntries RPC from 0.
 Node 2 accepted AppendEntries RPC from 0.
@@ -177,36 +210,58 @@ Node 2 accepted AppendEntries RPC from 0.
 Node 2 accepted AppendEntries RPC from 0.
 Node 2 accepted AppendEntries RPC from 0.
 Node 2 accepted AppendEntries RPC from 0.
-Node 2 accepted AppendEntries RPC from 0.
-Node 2 accepted AppendEntries RPC from 0.
-Node 2 accepted AppendEntries RPC from 0.
-Node 2 accepted AppendEntries RPC from 0.
-Node 2 accepted AppendEntries RPC from 0.
-Node 2 accepted AppendEntries RPC from 0.
-Node 2 accepted AppendEntries RPC from 0.
-Node 2 accepted AppendEntries RPC from 0.
-Node 2 accepted AppendEntries RPC from 0.
-Node 2 accepted AppendEntries RPC from 0.
-Node 2 accepted AppendEntries RPC from 0.
-Node 2 accepted AppendEntries RPC from 0.
-Node 2 accepted AppendEntries RPC from 0.
-Node 2 accepted AppendEntries RPC from 0.
-Node 2 accepted AppendEntries RPC from 0.
-Node 2 accepted AppendEntries RPC from 0.
-Node 2 accepted AppendEntries RPC from 0.
-Node 2 accepted AppendEntries RPC from 0.
-Node 2 accepted AppendEntries RPC from 0.
-Node 2 accepted AppendEntries RPC from 0.
-Node 2 (follower) committed the entry NO OP 2 to the state machine
-Node 2 (follower) committed the entry SET abc 32 2 to the state machine
-Node 2 accepted AppendEntries RPC from 0.
-Node 2 accepted AppendEntries RPC from 0.
-Node 2 accepted AppendEntries RPC from 0.
-Node 2 accepted AppendEntries RPC from 0.
-Node 2 accepted AppendEntries RPC from 0.
-Node 2 accepted AppendEntries RPC from 0.
-Node 2 accepted AppendEntries RPC from 0.
-Node 2 accepted AppendEntries RPC from 0.
-Node 2 accepted AppendEntries RPC from 0.
-Node 2 accepted AppendEntries RPC from 0.
-Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.

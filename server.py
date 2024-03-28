@@ -22,13 +22,14 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
         self.total_votes = 1
 
         self.leader_id = -1
-        self.leader_lease = 3
+        self.leader_lease = 5
         self.SERVERS_INFO = node_addresses
         self.heartbeat_duration = 2
         self.no_of_heartbeats = 1
         self.heartbeat_received = False
 
         self.timer = Timer(self.heartbeat_duration, self.leader)
+        self.leaseTimer = Timer(self.leader_lease, self.leader_step_down)
         self.id = id
         self.threads = []
         self.timeout_duration = (600, 2000)
@@ -37,9 +38,10 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
         self.start_time = time.time()
         self.end_time = time.time()
         
+        print(f"Node {self.id} started!")
         self.handle_persistence()
+        print("Current Term:", self.current_term)
         self.start()
-        # print(f"Node {self.id} started!")
     
 
     def handle_persistence(self):
@@ -74,11 +76,6 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
                 self.current_term = int(self.log[-1].split()[-1])
                 self.commitLogIndex = len(self.log) - 1
                 self.commitLogTerm = self.log[-1].split()[-1]
-            
-            # print("NODE_ID:", self.id)
-            # print("DICT:", self.dict)
-            # print("CURRENT_TERM:", self.current_term)
-            # print("LOG:", self.log)
 
 
         path = path.split('/')[0] + "/metadata.txt"
@@ -87,13 +84,17 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
                 f.write("")
         else:
             # Read the metadata from the file
+            # Metadata: Term 0 LeaderID 1 \n Term 1 LeaderID 0 \n ...
             with open(path, "r") as f:
                 lines = f.readlines()
                 for line in lines:
-                    if line.strip() == "": 
+                    line = line.strip()
+                    if line == "": 
                         continue
-                    # self.current_term = int(line.strip())
-        
+                    parts = line.split()
+                    if parts[0] == "Term":
+                        self.current_term = int(parts[1])
+                        # self.leader_id = int(parts[3])
         
         path = path.split('/')[0] + "/dump.txt"
         if not os.path.exists(path):
@@ -110,9 +111,10 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
 
 
     def start(self):
-        # Checks if it is the leader or a follower
+        # Checks if it is a leader or a follower
         if self.state == "Leader":
-            # Using multitimers
+            self.leaseTimer.cancel()
+            self.leaseTimer.start()
             self.leader()
         else:
             self.follower()
@@ -139,7 +141,7 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
 
     def leader(self):
         """
-        Sends heartbeats to all the servers in the network. If the leader lease expires, then it starts the leader election. If majority of the nodes are down, then it stops.
+        Sends heartbeats to all the servers in the network. If the leader lease expires, then it starts the leader election.
         """
         try:
             self.write_content(f"Leader {self.leader_id} sending heartbeat & Renewing Lease", dump=True)
@@ -148,8 +150,7 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
                 print(f"Can not send heartbeats from a {self.state} node!")
                 return
 
-            s = time.time()
-            # print(f"Sending heartbeats from node {self.id}!")
+            # s = time.time()
             print("Leader Log:", self.log)
 
             threads_election = []
@@ -163,44 +164,39 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
             
             for id, t in threads_election:
                 t.join()
-                print(f"L:Node {id} joined!")
             
             # Check if majority of the nodes are alive
-            e = time.time()
-            print("No of heartbeats:", self.no_of_heartbeats, ", after time:", round(e - s, 3))
+            # e = time.time()
+            print("No of heartbeats:", self.no_of_heartbeats)
 
             if self.no_of_heartbeats <= len(self.SERVERS_INFO) // 2:
                 self.no_of_heartbeats = 1
-                print(f"Majority of the nodes are down! Leader {self.id} will stop!")
-                self.write_content(f"Leader {self.leader_id} lease renewal failed. Stepping Down.", dump=True)
-                self.leader_election()  # Perform leader election
+                print(f"Majority of the nodes are down! Leader {self.id} will retry!")
             else:
                 self.no_of_heartbeats = 1
                 # Restart the timer. For now, it is set to heartbeat_duration
-                end_time = time.time()
-                if end_time - start_time >= self.leader_lease:
-                    # Leader Lease expired. Perform leader election
-                    print("Leader Lease expired!")
-                    self.write_content(f"Leader {self.leader_id} lease renewal failed. Stepping Down.", dump=True)
-                    self.leader_election()
-                else:
-                    # Renew Leader Lease by restarting the timer.
-                    
-                    # It will commit the log entries that are not committed yet.
-                    for i in range(self.commitLogIndex+1, len(self.log)):
-                        if "SET" in self.log[i]:
-                            key, value = self.log[i].split()[1], self.log[i].split()[2]
-                            self.dict[key] = value
-                        self.write_content(self.log[i], logs=True)
-                        self.write_content(f"Node {self.id} (leader) committed the entry {self.log[i]} to the state machine", dump=True)
-                        self.commitLogIndex = i
-                        self.commitLogTerm = self.log[i]
+                # Renew Leader Lease by restarting the timer.
+                self.leaseTimer.cancel()
+                self.leaseTimer = Timer(self.leader_lease, self.leader_step_down)
+                
+                # It will commit the log entries that are not committed yet.
+                for i in range(self.commitLogIndex+1, len(self.log)):
+                    if "SET" in self.log[i]:
+                        key, value = self.log[i].split()[1], self.log[i].split()[2]
+                        self.dict[key] = value
+                    self.write_content(self.log[i], logs=True)
+                    self.write_content(f"Node {self.id} (leader) committed the entry {self.log[i]} to the state machine", dump=True)
+                    self.commitLogIndex = i
+                    self.commitLogTerm = self.log[i]
+                self.write_content(f"Term {self.current_term} LeaderID {self.leader_id}", metadata=True)
 
-
-                    self.timer = Timer(self.heartbeat_duration, self.leader)
-                    self.timer.start()
+                self.leaseTimer.start()
+            
+            self.timer = Timer(self.heartbeat_duration, self.leader)
+            self.timer.start()
 
         except Exception as e:
+            print(e)
             print(f"Leader {self.id} stopped!")
     
 
@@ -226,15 +222,6 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
             for log in self.log:
                 item = request.logEntries.add()
                 item.entries = log
-            
-            
-            # # Formatting the entries
-            # entries = '\n'.join(self.log)
-
-            # logEntries can be a dictionary with id as s.no and value as the log entry. But currently it is treated as list of strings (logs).
-            # request = raft_pb2.AppendEntriesRequest(term=self.current_term, leaderId=self.id, 
-            #                                         logEntries=entries, leaseDuration=self.leader_lease,
-            #                                         commitLogIndex=self.commitLogIndex, commitLogTerm=self.commitLogTerm)
             
             # print("Request:", request.term, request.leaderId, request.logEntries, request.leaseDuration)
             response = stub.AppendEntries(request)
@@ -263,21 +250,18 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
             self.restart_timer()
 
             # Update the log
-            # logEntries = request.logEntries.split('\n')
             logEntries = [entry.entries for entry in request.logEntries]
             index = request.commitLogIndex
             term = request.commitLogTerm
 
-            print("LeaderCommitIndex:", index, "FollowerCommitIndex:", self.commitLogIndex, "LengthLogEntries:", len(logEntries))
+            # print("LeaderCommitIndex:", index, "FollowerCommitIndex:", self.commitLogIndex, "LengthLogEntries:", len(logEntries))
             if self.commitLogIndex < index:
             # Update the follower's log. This code assumes that everything before the commitLogIndex is in sync with the majority of the nodes.
                 # Follower has some entries that leader has committed but the follower has not committed yet.
                 for i in range(self.commitLogIndex+1, index+1):
                     # Follower does not have the entry that leader has committed. May happen to crashed/out-of-sync followers. Commit entries that leader has committed.
-                    if logEntries[i] == "":
-                        continue
                     
-                    if len(self.log) < index:
+                    if len(self.log) <= index:
                         self.log.append(logEntries[i])
                     
                     if "SET" in logEntries[i]:
@@ -290,18 +274,17 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
                     self.commitLogTerm = logEntries[i]
             
             else:
-                # Follower has already committed the entries that leader has committed. Put the leader's uncommitted entries in the follower's log.
+                # Put the leader's uncommitted entries in the follower's log.
                 for i in range(index+1, len(logEntries)):
-                    if logEntries[i] == "":
-                        continue
                     self.log.append(logEntries[i])
             
             print("Log entries:", self.log)   # Received the log entries from the leader
+            # Updating metadata entries
+            self.write_content(f"Term {self.current_term} LeaderID {self.leader_id}", metadata=True)
 
             return response
         
         except Exception as e:
-            # print(f"Node {self.id} rejected AppendEntries RPC from {request.leaderId}. Error: {e}")
             self.write_content(f"Node {self.id} rejected AppendEntries RPC from {self.leader_id}. Error: {e}", dump=True)
             # TODO: Missing a case where the first append entry is sent to recognise the leader. Hence, dumps would have the previous leader_id.
             return None
@@ -329,6 +312,16 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
         self.timer.start()
 
 
+    def leader_step_down(self):
+        """
+        Steps down the leader.
+        """
+        self.leaseTimer.cancel()
+        self.state = "Follower"
+        self.write_content(f"Leader {self.leader_id} lease expired. Stepping Down.", dump=True)
+        self.leader_election()
+
+
     def leader_election(self):
         """
         Performs leader election.
@@ -343,13 +336,13 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
         
         self.write_content(f"Node {self.id} election timer timed out, Starting election.", dump=True)
         self.reset_term_variables()
-        print(f"TIMED OUT after {self.timeout} seconds at {self.end_time}! Actual time taken: {round(self.end_time - self.start_time, 3)} seconds! Starting leader election for {self.current_term} Term! ")
+        print(f"TIMED OUT after {self.timeout} seconds at {self.end_time}! Actual time taken: {round(self.end_time - self.start_time, 3)} seconds!")
+        print(f"Starting leader election for {self.current_term} Term!")
 
         # print(f"Node {self.id} Timeout! Leader election will be started for Term {self.current_term}!")
         self.state = "Candidate"
         self.voted_for = self.id
         self.timer.cancel()     # Cancels the timeout timer
-        # self.timer.join()
 
         threads = []
         for id, address in self.SERVERS_INFO.items():
@@ -360,12 +353,8 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
         for t in threads:
             t.start()
         
-        i =1
-
         for t in threads:
             t.join()
-            print(f"Node {i} joined at Time: {time.time()}!")
-            i+=1
         
         votes_received = self.total_votes
         self.total_votes = 1
@@ -388,7 +377,7 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
                 self.state = "Leader"
                 self.leader_id = self.id
                 print(f"Node {self.id} is the leader!")
-                
+        
         else:
             self.state = "Follower"
             print(f"No leader elected in term {self.current_term}!")
@@ -401,7 +390,6 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
         Waits for the heartbeat from the leader. If the heartbeat is not received, then it starts the leader election.
         """
         try:
-            # while self.state == "Follower":
             self.timer.cancel()
             self.timer=Timer(self.timeout, self.leader_election)
             self.timer.start()
@@ -422,7 +410,6 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
                 request = raft_pb2.RequestVoteRequest(term=self.current_term, candidateId=self.id, lastLogIndex=0, lastLogTerm=0)
             else:
                 term_ = int(self.log[-1].split()[-1])
-                print("Term:", term_)
                 request = raft_pb2.RequestVoteRequest(term=self.current_term, candidateId=self.id, lastLogIndex=len(self.log)-1, lastLogTerm=term_)
             response = stub.RequestVote(request)
             # print("Response:", response.term, response.voteGranted, response.leaseDuration)
@@ -443,7 +430,6 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
         print("Vote Request Received!")
         self.timer.cancel()
         self.timer.join()
-        print(self.timer.is_alive())
 
         response = raft_pb2.RequestVoteResponse()
         response.term = self.current_term
@@ -462,10 +448,11 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
 
         logOK = (request.lastLogTerm > lastTerm) or (request.lastLogTerm == lastTerm and request.lastLogIndex >= len(self.log)-1)
         
-        print(f"Log OK {self.current_term}:", logOK, "Last Log Term:", lastTerm, "Last Log Index:", len(self.log)-1, "Request Last Log Term:", request.lastLogTerm, "Request Last Log Index:", request.lastLogIndex)
+        print(f"Log OK {self.current_term}:", logOK, "Last Log Term:", lastTerm, "Last Log Index:", len(self.log)-1, 
+               "Request Last Log Term:", request.lastLogTerm, "Request Last Log Index:", request.lastLogIndex)
         print(f"Log OK {self.current_term}:", (request.lastLogTerm > lastTerm), (request.lastLogTerm == lastTerm), request.lastLogIndex >= len(self.log)-1)
         
-        if request.term == self.current_term and (self.voted_for is None or self.voted_for == request.candidateId):
+        if request.term == self.current_term and logOK and (self.voted_for is None or self.voted_for == request.candidateId):
             response.voteGranted = True
             self.voted_for = request.candidateId
         else:
@@ -475,7 +462,7 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
         self.timer = Timer(self.timeout, self.leader_election)
         self.timer.start()
         self.start_time = time.time()
-        print("Voted for:", self.voted_for, "ID:", self.id, "Candidate ID:", request.candidateId, "Updated Term:", request.term, "Time:", self.start_time, "Actual Time:", time.time())
+        print("Voted for:", self.voted_for, "ID:", self.id, "Candidate ID:", request.candidateId, "Updated Term:", request.term)
         # print(self.timer.finished)
 
         return response
