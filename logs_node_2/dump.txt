@@ -1,0 +1,260 @@
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 (follower) committed the entry NO-OP 1 to the state machine
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 election timer timed out, Starting election.
+Vote granted for Node 2 by Node 1 in term 2.
+Vote denied for Node 2 by Node 0 in term 2.
+Leader 2 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 0.
+Node 2 (leader) committed the entry NO-OP 2 to the state machine
+Leader 2 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 0.
+Leader 2 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 0.
+Leader 2 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 0.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 (follower) committed the entry NO-OP 7 to the state machine
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 (follower) committed the entry NO-OP 96 to the state machine
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 (follower) committed the entry NO-OP 96 to the state machine
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 election timer timed out, Starting election.
+Vote granted for Node 2 by Node 1 in term 97.
+Vote denied for Node 2 by Node 0 in term 97.
+Leader 2 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 0.
+Node 2 (leader) committed the entry NO-OP 97 to the state machine
+Leader 2 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 0.
+Leader 2 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 0.
+Leader 2 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 0.
+Leader 2 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 0.
+Leader 2 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 0.
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 (follower) committed the entry NO-OP 98 to the state machine
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 election timer timed out, Starting election.
+Vote granted for Node 2 by Node 0 in term 99.
+Vote denied for Node 2 by Node 1 in term 99.
+Leader 2 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Node 2 (leader) committed the entry NO-OP 99 to the state machine
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Node 2 election timer timed out, Starting election.
+Vote denied for Node 2 by Node 0 in term 100.
+Vote granted for Node 2 by Node 1 in term 100.
+Leader 2 sending heartbeat & Renewing Lease
+Node 2 (leader) committed the entry NO-OP 100 to the state machine
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 0.
+Leader 2 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 0.
+Error occurred while sending RPC to Node 1.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 (follower) committed the entry NO-OP 101 to the state machine
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 (follower) committed the entry NO-OP 102 to the state machine
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 (follower) committed the entry NO-OP 103 to the state machine
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 1.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 (follower) committed the entry NO-OP 104 to the state machine
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 election timer timed out, Starting election.
+Vote granted for Node 2 by Node 1 in term 105.
+Vote granted for Node 2 by Node 0 in term 105.
+Node 2 became the leader for term 105.
+Leader 2 sending heartbeat & Renewing Lease
+Node 2 (leader) committed the entry NO-OP 105 to the state machine
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Leader 2 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.

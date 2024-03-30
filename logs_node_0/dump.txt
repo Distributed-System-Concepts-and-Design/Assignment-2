@@ -1,0 +1,522 @@
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 1.
+Vote granted for Node 0 by Node 2 in term 1.
+Leader 0 sending heartbeat & Renewing Lease
+Node 0 (leader) committed the entry NO-OP 1 to the state machine
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 2 in term 2.
+Vote denied for Node 0 by Node 1 in term 2.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 3.
+Vote denied for Node 0 by Node 2 in term 3.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 4.
+Vote denied for Node 0 by Node 2 in term 4.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 5.
+Vote denied for Node 0 by Node 2 in term 5.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 6.
+Vote denied for Node 0 by Node 2 in term 6.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 7.
+Vote denied for Node 0 by Node 2 in term 7.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 8.
+Vote denied for Node 0 by Node 2 in term 8.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 9.
+Vote denied for Node 0 by Node 2 in term 9.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 10.
+Vote denied for Node 0 by Node 2 in term 10.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 11.
+Vote denied for Node 0 by Node 2 in term 11.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 12.
+Vote denied for Node 0 by Node 2 in term 12.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 2 in term 13.
+Vote denied for Node 0 by Node 1 in term 13.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 2 in term 14.
+Vote denied for Node 0 by Node 1 in term 14.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 15.
+Vote denied for Node 0 by Node 2 in term 15.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 16.
+Vote denied for Node 0 by Node 2 in term 16.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 17.
+Vote denied for Node 0 by Node 2 in term 17.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 2 in term 18.
+Vote denied for Node 0 by Node 1 in term 18.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 19.
+Vote denied for Node 0 by Node 2 in term 19.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 20.
+Vote denied for Node 0 by Node 2 in term 20.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 2 in term 21.
+Vote denied for Node 0 by Node 1 in term 21.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 22.
+Vote denied for Node 0 by Node 2 in term 22.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 23.
+Vote denied for Node 0 by Node 2 in term 23.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 24.
+Vote denied for Node 0 by Node 2 in term 24.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 25.
+Vote denied for Node 0 by Node 2 in term 25.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 2 in term 26.
+Vote denied for Node 0 by Node 1 in term 26.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 2 in term 27.
+Vote denied for Node 0 by Node 1 in term 27.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 28.
+Vote denied for Node 0 by Node 2 in term 28.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 29.
+Vote denied for Node 0 by Node 2 in term 29.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 30.
+Vote denied for Node 0 by Node 2 in term 30.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 31.
+Vote denied for Node 0 by Node 2 in term 31.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 32.
+Vote denied for Node 0 by Node 2 in term 32.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 33.
+Vote denied for Node 0 by Node 2 in term 33.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 34.
+Vote denied for Node 0 by Node 2 in term 34.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 35.
+Vote denied for Node 0 by Node 2 in term 35.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 36.
+Vote denied for Node 0 by Node 2 in term 36.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 37.
+Vote denied for Node 0 by Node 2 in term 37.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 38.
+Vote denied for Node 0 by Node 2 in term 38.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 2 in term 39.
+Vote denied for Node 0 by Node 1 in term 39.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 40.
+Vote denied for Node 0 by Node 2 in term 40.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 2 in term 41.
+Vote denied for Node 0 by Node 1 in term 41.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 42.
+Vote denied for Node 0 by Node 2 in term 42.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 2 in term 43.
+Vote denied for Node 0 by Node 1 in term 43.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 44.
+Vote denied for Node 0 by Node 2 in term 44.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 45.
+Vote denied for Node 0 by Node 2 in term 45.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 46.
+Vote denied for Node 0 by Node 2 in term 46.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 47.
+Vote denied for Node 0 by Node 2 in term 47.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 48.
+Vote denied for Node 0 by Node 2 in term 48.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 49.
+Vote denied for Node 0 by Node 2 in term 49.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 50.
+Vote denied for Node 0 by Node 2 in term 50.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 2 in term 51.
+Vote denied for Node 0 by Node 1 in term 51.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 2 in term 52.
+Vote denied for Node 0 by Node 1 in term 52.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 53.
+Vote denied for Node 0 by Node 2 in term 53.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 54.
+Vote denied for Node 0 by Node 2 in term 54.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 2 in term 55.
+Vote denied for Node 0 by Node 1 in term 55.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 56.
+Vote denied for Node 0 by Node 2 in term 56.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 57.
+Vote denied for Node 0 by Node 2 in term 57.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 58.
+Vote denied for Node 0 by Node 2 in term 58.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 59.
+Vote denied for Node 0 by Node 2 in term 59.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 2 in term 60.
+Vote denied for Node 0 by Node 1 in term 60.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 61.
+Vote denied for Node 0 by Node 2 in term 61.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 62.
+Vote denied for Node 0 by Node 2 in term 62.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 63.
+Vote denied for Node 0 by Node 2 in term 63.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 64.
+Vote denied for Node 0 by Node 2 in term 64.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 65.
+Vote denied for Node 0 by Node 2 in term 65.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 66.
+Vote denied for Node 0 by Node 2 in term 66.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 67.
+Vote denied for Node 0 by Node 2 in term 67.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 68.
+Vote denied for Node 0 by Node 2 in term 68.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 69.
+Vote denied for Node 0 by Node 2 in term 69.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 70.
+Vote denied for Node 0 by Node 2 in term 70.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 71.
+Vote denied for Node 0 by Node 2 in term 71.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 72.
+Vote denied for Node 0 by Node 2 in term 72.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 73.
+Vote denied for Node 0 by Node 2 in term 73.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 2 in term 74.
+Vote denied for Node 0 by Node 1 in term 74.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 75.
+Vote denied for Node 0 by Node 2 in term 75.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 76.
+Vote denied for Node 0 by Node 2 in term 76.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 77.
+Vote denied for Node 0 by Node 2 in term 77.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 2 in term 78.
+Vote denied for Node 0 by Node 1 in term 78.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 79.
+Vote denied for Node 0 by Node 2 in term 79.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 80.
+Vote denied for Node 0 by Node 2 in term 80.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 81.
+Vote denied for Node 0 by Node 2 in term 81.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 82.
+Vote denied for Node 0 by Node 2 in term 82.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 83.
+Vote denied for Node 0 by Node 2 in term 83.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 84.
+Vote denied for Node 0 by Node 2 in term 84.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 85.
+Vote denied for Node 0 by Node 2 in term 85.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 86.
+Vote denied for Node 0 by Node 2 in term 86.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 87.
+Vote denied for Node 0 by Node 2 in term 87.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 2 in term 88.
+Vote denied for Node 0 by Node 1 in term 88.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 89.
+Vote denied for Node 0 by Node 2 in term 89.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 90.
+Vote denied for Node 0 by Node 2 in term 90.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 91.
+Vote denied for Node 0 by Node 2 in term 91.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 92.
+Vote denied for Node 0 by Node 2 in term 92.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 93.
+Vote denied for Node 0 by Node 2 in term 93.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 94.
+Vote denied for Node 0 by Node 2 in term 94.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 2 in term 95.
+Vote denied for Node 0 by Node 1 in term 95.
+Node 0 accepted AppendEntries RPC from 1.
+Node 0 (follower) committed the entry NO-OP 2 to the state machine
+Node 0 accepted AppendEntries RPC from 1.
+Node 0 (follower) committed the entry NO-OP 7 to the state machine
+Node 0 accepted AppendEntries RPC from 1.
+Node 0 accepted AppendEntries RPC from 1.
+Node 0 accepted AppendEntries RPC from 1.
+Node 0 accepted AppendEntries RPC from 1.
+Node 0 accepted AppendEntries RPC from 1.
+Node 0 accepted AppendEntries RPC from 1.
+Node 0 accepted AppendEntries RPC from 1.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 2 in term 96.
+Vote granted for Node 0 by Node 1 in term 96.
+Leader 0 sending heartbeat & Renewing Lease
+Node 0 (leader) committed the entry NO-OP 2 to the state machine
+Node 0 (leader) committed the entry NO-OP 96 to the state machine
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 96.
+Vote granted for Node 0 by Node 2 in term 96.
+Leader 0 sending heartbeat & Renewing Lease
+Node 0 (leader) committed the entry NO-OP 2 to the state machine
+Node 0 (leader) committed the entry NO-OP 96 to the state machine
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 (follower) committed the entry NO-OP 97 to the state machine
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 1.
+Node 0 accepted AppendEntries RPC from 1.
+Node 0 (follower) committed the entry NO-OP 98 to the state machine
+Node 0 accepted AppendEntries RPC from 1.
+Node 0 accepted AppendEntries RPC from 1.
+Node 0 accepted AppendEntries RPC from 1.
+Node 0 accepted AppendEntries RPC from 1.
+Node 0 accepted AppendEntries RPC from 1.
+Node 0 accepted AppendEntries RPC from 1.
+Node 0 accepted AppendEntries RPC from 1.
+Node 0 accepted AppendEntries RPC from 1.
+Node 0 accepted AppendEntries RPC from 1.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 (follower) committed the entry NO-OP 99 to the state machine
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 (follower) committed the entry NO-OP 100 to the state machine
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 2 in term 101.
+Vote granted for Node 0 by Node 1 in term 101.
+Leader 0 sending heartbeat & Renewing Lease
+Node 0 (leader) committed the entry NO-OP 101 to the state machine
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 102.
+Vote granted for Node 0 by Node 2 in term 102.
+Leader 0 sending heartbeat & Renewing Lease
+Node 0 (leader) committed the entry NO-OP 102 to the state machine
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Node 0 accepted AppendEntries RPC from 1.
+Node 0 (follower) committed the entry NO-OP 103 to the state machine
+Node 0 accepted AppendEntries RPC from 1.
+Node 0 accepted AppendEntries RPC from 1.
+Node 0 accepted AppendEntries RPC from 1.
+Node 0 accepted AppendEntries RPC from 1.
+Node 0 accepted AppendEntries RPC from 1.
+Node 0 accepted AppendEntries RPC from 1.
+Node 0 accepted AppendEntries RPC from 1.
+Node 0 accepted AppendEntries RPC from 1.
+Node 0 accepted AppendEntries RPC from 1.
+Node 0 accepted AppendEntries RPC from 1.
+Node 0 accepted AppendEntries RPC from 1.
+Node 0 accepted AppendEntries RPC from 1.
+Node 0 accepted AppendEntries RPC from 1.
+Node 0 accepted AppendEntries RPC from 1.
+Node 0 accepted AppendEntries RPC from 1.
+Node 0 accepted AppendEntries RPC from 1.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 104.
+Vote granted for Node 0 by Node 2 in term 104.
+Node 0 became the leader for term 104.
+Leader 0 sending heartbeat & Renewing Lease
+Node 0 (leader) committed the entry NO-OP 104 to the state machine
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 (follower) committed the entry NO-OP 105 to the state machine
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
