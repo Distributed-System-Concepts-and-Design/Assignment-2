@@ -256,10 +256,7 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
             
             response = stub.AppendEntries(request)
             if response.success:
-                self.write_content(f"Node {id} accepted AppendEntries RPC from {self.id}.", dump=True)
                 self.no_of_heartbeats += 1
-            else:
-                self.write_content(f"Node {id} rejected AppendEntries RPC from {self.id}.", dump=True)
             
             return response
         except Exception as e:
@@ -269,15 +266,24 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
 
     def AppendEntries(self, request, context):
         try:
+            self.write_content(f"Node {self.id} accepted AppendEntries RPC from {self.leader_id}.", dump=True)
             response = raft_pb2.AppendEntriesResponse()
             response.term = self.current_term   # Stores previous term
             response.success = True             # Bullshit value
+
+            # if request.term < self.current_term:    # Leader has a lower term than follower. Reject the RPC.
+            #     self.write_content(f"Node {self.id} rejected AppendEntries (DUE TO OUTDATED LEADER) RPC from {self.leader_id}.", dump=True)
+            #     response.success = False
+            #     return response
+            # else:
+            #     self.write_content(f"Node {self.id} accepted AppendEntries RPC from {self.leader_id}.", dump=True)
+            #     response.success = True
 
             self.current_term = request.term
             self.leader_id = request.leaderId
             self.leaseDuration = request.leaseDuration
 
-            print(f"Received heartbeat from node {request.leaderId} with term {request.term}!")
+            # print(f"Received heartbeat from node {request.leaderId} with term {request.term}!")
             # self.heartbeat_received = True
             self.restart_timer()
 
@@ -285,6 +291,7 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
             logEntries = [entry.entries for entry in request.logEntries]
             index = request.commitLogIndex
             term = request.commitLogTerm
+
 
             # Update the follower's log. This code assumes that everything before the commitLogIndex is in sync with the majority of the nodes.
             if self.commitLogIndex < index:
@@ -322,8 +329,8 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
             return response
         
         except Exception as e:
-            # self.write_content(f"Node {self.id} rejected AppendEntries RPC from {self.leader_id}. Error: {e}", dump=True)
-            self.write_content(f"Error occurred while sending RPC to Node {id}.", dump=True)
+            self.write_content(f"Node {self.id} rejected AppendEntries RPC from {self.leader_id}.", dump=True)
+            # self.write_content(f"Error occurred while sending RPC to Node {id}.", dump=True)
             response = raft_pb2.AppendEntriesResponse()
             response.success = False
             return response
@@ -368,6 +375,7 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
         """
         Performs leader election.
         """
+        self.leaseTimer.cancel()
         self.end_time = time.time()
         # print("Time taken:", self.end_time - self.start_time)
         if self.heartbeat_received:
@@ -514,15 +522,15 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
     def handle_get_request(self, request):
         key = request.split()[1]
 
-        # if self.state != "Leader":
-        #     return raft_pb2.ServeClientResponse(data="Not the leader!", leader_id=self.leader_id, success=False)
-        # else:
-        self.write_content(f"Node {self.leader_id} (leader) received a {request} request.", dump=True)
-        
-        log = "GET " + key + " " + str(self.current_term)
-        self.log.append(log)
+        if self.state != "Leader":
+            return raft_pb2.ServeClientResponse(data="Not the leader!", leader_id=self.leader_id, success=False)
+        else:
+            self.write_content(f"Node {self.leader_id} (leader) received a {request} request.", dump=True)
+            
+            log = "GET " + key + " " + str(self.current_term)
+            self.log.append(log)
 
-        return raft_pb2.ServeClientResponse(data=self.dict.get(key, "Key not present!"), leader_id=self.leader_id, success=True)
+            return raft_pb2.ServeClientResponse(data=self.dict.get(key, "Key not present!"), leader_id=self.leader_id, success=True)
 
 
     def handle_set_request(self, request):
@@ -543,7 +551,7 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
     def ServeClient(self, request, context):
         # handle get, set, and getleader
         try:
-            print(f"Received request: {request.request}")
+            # print(f"Received request: {request.request}")
             req = request.request.split()[0]
 
             if req == "GETLEADER":

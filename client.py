@@ -9,6 +9,7 @@ class RaftClient:
         self.leader_id = -1
         self.leader_found = False
         self.node_addresses = node_addresses
+        self.verbose = True
     
     
     def __check_leader_status__(self, id, address, request):
@@ -21,6 +22,8 @@ class RaftClient:
                 else:
                     return False, response
             except grpc.RpcError as e:
+                if self.verbose:
+                    print("Error in checking leader status of node:", id)
                 return False, None
     
     
@@ -34,6 +37,8 @@ class RaftClient:
                 else:
                     return False, response
             except grpc.RpcError as e:
+                if self.verbose:
+                    print("Error in sending request to node:", id)
                 return False, None
     
     
@@ -46,11 +51,10 @@ class RaftClient:
                     if success:
                         self.leader_id = response.leader_id
                         self.leader_found = True
-                        print("Leader:", self.leader_id)
-                        return
+                        return 1
                 
                 if self.leader_found == False:      # Raft does not have a leader
-                    print("Leader not present in Raft!")
+                    return -1
             
             else:
                 success, response = self.__check_leader_status__(self.leader_id, self.node_addresses[self.leader_id], request)
@@ -58,38 +62,46 @@ class RaftClient:
                     if self.leader_id != response.leader_id:        # Leader changed
                         self.leader_id = response.leader_id
                         self.leader_found = True
+                    else:
+                        self.leader_found = True                 # Leader is same
+                    return 1
                 else:
                     self.leader_id = -1         # Client's POV leader is down
                     self.leader_found = False
-                    self.find_leader()
-            return 1
+                    return self.find_leader()
 
         except Exception as e:
-            print("Error:", e)
-            return -1                
+            if self.verbose:
+                print("Error in find_leader method:", e)
+            return -1
 
 
     def get(self, key):
         try:
-            if not self.leader_found:
-                return
+            status = self.find_leader()
+            if status == -1: #not self.leader_found:
+                print("Leader not present in Raft!")
+                return -1
             
             request = f"GET {key}"
             _, response = self.__send_request__(self.leader_id, self.node_addresses[self.leader_id], request)
-            print(f"{key} = {response.data}")
+            if response.success:
+                print(f"{key} = {response.data}")
+            else:
+                print("Key could not be retrieved!")
             return 1
         
         except Exception as e:
-            print("Error:", e)
+            print("Error in get method:", e)
             return -1
 
 
     def set(self, key, value):
         try:
-            self.find_leader()
-            print("Leader:", self.leader_id)
-            if not self.leader_found:
-                return
+            status = self.find_leader()
+            if status == -1: #self.leader_id == -1 or not self.leader_found:
+                print("Leader not present in Raft!")
+                return -1
             
             request = f"SET {key} {value}"
             _, response = self.__send_request__(self.leader_id, self.node_addresses[self.leader_id], request)
@@ -97,7 +109,7 @@ class RaftClient:
             return 1
         
         except Exception as e:
-            print("Error:", e)
+            print("Error in set method:", e)
             return -1
 
 
@@ -134,16 +146,24 @@ def serve():
 
     while choice != 3:
         if choice == 0:
-            client.find_leader()
+            status = client.find_leader()
+            if status == -1:
+                print("Leader not present in Raft!")
+            else:
+                print(f"Leader found at node: {client.leader_id}")
 
         elif choice == 1:
             key = input("Enter the key: ")
+            # client.verbose = False
             client.get(key)
+            client.verbose = True
         
         elif choice == 2:
             key = input("Enter the key: ")
             value = input("Enter the value: ")
+            # client.verbose = False
             client.set(key, value)
+            client.verbose = True
         
         else:
             print("Invalid choice!")
@@ -153,5 +173,5 @@ def serve():
 if __name__ == '__main__':
     try:
         serve()
-    except KeyboardInterrupt:
-        print("\nClient stopped!")
+    except Exception as e:
+        print("\nClient stopped!", e)
