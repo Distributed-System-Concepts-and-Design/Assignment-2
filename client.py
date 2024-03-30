@@ -38,52 +38,67 @@ class RaftClient:
     
     
     def find_leader(self, request="GETLEADER"):
-        if self.leader_id not in self.node_addresses.keys():       # Client does not have the leader
-            for id, address in self.node_addresses.items():
+        try:
+            if self.leader_id not in self.node_addresses.keys():       # Client does not have the leader
+                for id, address in self.node_addresses.items():
+                    
+                    success, response = self.__check_leader_status__(id, address, request)
+                    if success:
+                        self.leader_id = response.leader_id
+                        self.leader_found = True
+                        print("Leader:", self.leader_id)
+                        return
                 
-                success, response = self.__check_leader_status__(id, address, request)
-                if success:
-                    self.leader_id = response.leader_id
-                    self.leader_found = True
-                    print("Leader:", self.leader_id)
-                    return
+                if self.leader_found == False:      # Raft does not have a leader
+                    print("Leader not present in Raft!")
             
-            if self.leader_found == False:      # Raft does not have a leader
-                print("Leader not present in Raft!")
-        
-        else:
-            success, response = self.__check_leader_status__(self.leader_id, self.node_addresses[self.leader_id], request)
-            if success:
-                if self.leader_id != response.leader_id:        # Leader changed
-                    self.leader_id = response.leader_id
-                    self.leader_found = True
             else:
-                self.leader_id = -1         # Client's POV leader is down
-                self.leader_found = False
-                self.find_leader()                   
+                success, response = self.__check_leader_status__(self.leader_id, self.node_addresses[self.leader_id], request)
+                if success:
+                    if self.leader_id != response.leader_id:        # Leader changed
+                        self.leader_id = response.leader_id
+                        self.leader_found = True
+                else:
+                    self.leader_id = -1         # Client's POV leader is down
+                    self.leader_found = False
+                    self.find_leader()
+            return 1
+
+        except Exception as e:
+            print("Error:", e)
+            return -1                
 
 
     def get(self, key):
-        # self.find_leader()
-        # print("Leader:", self.leader_id)
-        if not self.leader_found:
-            return
+        try:
+            if not self.leader_found:
+                return
+            
+            request = f"GET {key}"
+            _, response = self.__send_request__(self.leader_id, self.node_addresses[self.leader_id], request)
+            print(f"{key} = {response.data}")
+            return 1
         
-        request = f"GET {key}"
-        # print(self.node_addresses)
-        _, response = self.__send_request__(self.leader_id, self.node_addresses[self.leader_id], request)
-        print(f"{key} = {response.data}")
+        except Exception as e:
+            print("Error:", e)
+            return -1
 
 
     def set(self, key, value):
-        self.find_leader()
-        print("Leader:", self.leader_id)
-        if not self.leader_found:
-            return
+        try:
+            self.find_leader()
+            print("Leader:", self.leader_id)
+            if not self.leader_found:
+                return
+            
+            request = f"SET {key} {value}"
+            _, response = self.__send_request__(self.leader_id, self.node_addresses[self.leader_id], request)
+            print(response.data)
+            return 1
         
-        request = f"SET {key} {value}"
-        _, response = self.__send_request__(self.leader_id, self.node_addresses[self.leader_id], request)
-        print(response.data)
+        except Exception as e:
+            print("Error:", e)
+            return -1
 
 
 def main_menu():
@@ -111,7 +126,6 @@ def fetch_server_address():
 
 def serve():
     node_addresses = fetch_server_address()
-
     client = RaftClient(node_addresses)
 
     print('-' * 25)
