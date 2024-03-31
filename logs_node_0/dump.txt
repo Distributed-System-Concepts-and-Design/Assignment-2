@@ -130,3 +130,6 @@ Leader 0 sending heartbeat & Renewing Lease
 Error occurred while sending RPC to Node 2.
 Error occurred while sending RPC to Node 1.
 Leader 0 lease expired. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.

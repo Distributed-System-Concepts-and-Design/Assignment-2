@@ -61,3 +61,4 @@ Term 40, CommitIndex 10, VotedFor 0
 Term 40, CommitIndex 10, VotedFor 0
 Term 40, CommitIndex 10, VotedFor 0
 Term 40, CommitIndex 11, VotedFor 0
+Term 41, CommitIndex 11, VotedFor 0
