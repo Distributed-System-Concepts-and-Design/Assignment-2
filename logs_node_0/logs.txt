@@ -1,0 +1,12 @@
+NO-OP 1
+NO-OP 1
+NO-OP 32
+NO-OP 33
+SET abcd 1234 33
+NO-OP 38
+SET ad 12 38
+NO-OP 40
+GET ad 40
+GET abc 40
+GET abcd 40
+GET abcd 40

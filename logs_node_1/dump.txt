@@ -1,0 +1,58 @@
+Node 1 accepted AppendEntries RPC from -1.
+Node 1 accepted AppendEntries RPC from 0.
+Node 1 (follower) committed the entry NO-OP 1 to the state machine
+Node 1 accepted AppendEntries RPC from 0.
+Node 1 accepted AppendEntries RPC from 0.
+Node 1 accepted AppendEntries RPC from 0.
+Node 1 accepted AppendEntries RPC from 0.
+Node 1 accepted AppendEntries RPC from 0.
+Node 1 accepted AppendEntries RPC from 0.
+Node 1 accepted AppendEntries RPC from 0.
+Node 1 accepted AppendEntries RPC from 0.
+Node 1 accepted AppendEntries RPC from 0.
+Node 1 accepted AppendEntries RPC from 0.
+Node 1 accepted AppendEntries RPC from 0.
+Node 1 accepted AppendEntries RPC from -1.
+Node 1 accepted AppendEntries RPC from 2.
+Node 1 (follower) committed the entry NO-OP 2 to the state machine
+Node 1 accepted AppendEntries RPC from 2.
+Node 1 (follower) committed the entry NO-OP 32 to the state machine
+Node 1 accepted AppendEntries RPC from 2.
+Node 1 accepted AppendEntries RPC from 2.
+Node 1 accepted AppendEntries RPC from 2.
+Node 1 accepted AppendEntries RPC from 2.
+Node 1 accepted AppendEntries RPC from 2.
+Node 1 accepted AppendEntries RPC from 2.
+Node 1 accepted AppendEntries RPC from 2.
+Node 1 accepted AppendEntries RPC from 2.
+Node 1 accepted AppendEntries RPC from 2.
+Node 1 accepted AppendEntries RPC from -1.
+Node 1 accepted AppendEntries RPC from 0.
+Node 1 (follower) committed the entry NO-OP 33 to the state machine
+Node 1 accepted AppendEntries RPC from 0.
+Node 1 accepted AppendEntries RPC from 0.
+Node 1 accepted AppendEntries RPC from 0.
+Node 1 accepted AppendEntries RPC from 0.
+Node 1 accepted AppendEntries RPC from 0.
+Node 1 accepted AppendEntries RPC from 0.
+Node 1 (follower) committed the entry SET abcd 1234 33 to the state machine
+Node 1 accepted AppendEntries RPC from 0.
+Node 1 accepted AppendEntries RPC from -1.
+Node 1 accepted AppendEntries RPC from 0.
+Node 1 (follower) committed the entry NO-OP 38 to the state machine
+Node 1 accepted AppendEntries RPC from 0.
+Node 1 accepted AppendEntries RPC from 0.
+Node 1 accepted AppendEntries RPC from -1.
+Node 1 accepted AppendEntries RPC from 0.
+Node 1 (follower) committed the entry SET ad 12 38 to the state machine
+Node 1 (follower) committed the entry NO-OP 40 to the state machine
+Node 1 (follower) committed the entry GET ad 40 to the state machine
+Node 1 accepted AppendEntries RPC from 0.
+Node 1 accepted AppendEntries RPC from 0.
+Node 1 (follower) committed the entry GET abc 40 to the state machine
+Node 1 accepted AppendEntries RPC from 0.
+Node 1 accepted AppendEntries RPC from 0.
+Node 1 accepted AppendEntries RPC from 0.
+Node 1 (follower) committed the entry GET abcd 40 to the state machine
+Node 1 accepted AppendEntries RPC from 0.
+Node 1 accepted AppendEntries RPC from 0.

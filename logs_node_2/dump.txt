@@ -1,0 +1,61 @@
+Node 2 accepted AppendEntries RPC from -1.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 (follower) committed the entry NO-OP 1 to the state machine
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 election timer timed out, Starting election.
+Vote denied for Node 2 by Node 0 in term 2.
+Vote granted for Node 2 by Node 1 in term 2.
+Node 2 became the leader for term 2.
+Leader 2 sending heartbeat & Renewing Lease
+Stepping Down.
+Node 2 (leader) committed the entry NO-OP 2 to the state machine
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 lease expired. Stepping Down.
+Node 2 election timer timed out, Starting election.
+Vote granted for Node 2 by Node 1 in term 32.
+Vote granted for Node 2 by Node 0 in term 32.
+Node 2 became the leader for term 32.
+Leader 2 sending heartbeat & Renewing Lease
+Node 2 (leader) committed the entry NO-OP 32 to the state machine
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Leader 2 sending heartbeat & Renewing Lease
+Node 2 accepted AppendEntries RPC from -1.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 (follower) committed the entry NO-OP 33 to the state machine
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 (follower) committed the entry SET abcd 1234 33 to the state machine
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from -1.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 (follower) committed the entry NO-OP 38 to the state machine
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.
+Node 2 accepted AppendEntries RPC from 0.

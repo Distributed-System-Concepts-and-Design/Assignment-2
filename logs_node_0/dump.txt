@@ -1,0 +1,132 @@
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 2 in term 1.
+Vote granted for Node 0 by Node 1 in term 1.
+Node 0 became the leader for term 1.
+Leader 0 sending heartbeat & Renewing Lease
+Node 0 (leader) committed the entry NO-OP 1 to the state machine
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Node 0 rejected AppendEntries (DUE TO OUTDATED LEADER) RPC from -1.
+Node 0 election timer timed out, Starting election.
+Vote denied for Node 0 by Node 1 in term 31.
+Vote denied for Node 0 by Node 2 in term 31.
+Node 0 accepted AppendEntries RPC from -1.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 (follower) committed the entry NO-OP 32 to the state machine
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 accepted AppendEntries RPC from 2.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 33.
+Vote granted for Node 0 by Node 2 in term 33.
+Node 0 became the leader for term 33.
+Leader 0 sending heartbeat & Renewing Lease
+Node 0 (leader) committed the entry NO-OP 33 to the state machine
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Node 0 (leader) received a SET abcd 1234 request.
+Leader 0 sending heartbeat & Renewing Lease
+Node 0 (leader) committed the entry SET abcd 1234 33 to the state machine
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Leader 0 sending heartbeat & Renewing Lease
+Node 0 (leader) received a SET abq qwe request.
+Error occurred while sending RPC to Node 2.
+Error occurred while sending RPC to Node 1.
+Leader 0 lease expired. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Error occurred while sending RPC to Node 2.
+Error occurred while sending RPC to Node 1.
+Node 0 election timer timed out, Starting election.
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Node 0 election timer timed out, Starting election.
+Error occurred while sending RPC to Node 2.
+Error occurred while sending RPC to Node 1.
+Node 0 election timer timed out, Starting election.
+Error occurred while sending RPC to Node 2.
+Error occurred while sending RPC to Node 1.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 38.
+Vote granted for Node 0 by Node 2 in term 38.
+Node 0 became the leader for term 38.
+Leader 0 sending heartbeat & Renewing Lease
+Node 0 (leader) committed the entry NO-OP 38 to the state machine
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Node 0 (leader) received a SET ad 12 request.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 1.
+Error occurred while sending RPC to Node 2.
+Leader 0 lease expired. Stepping Down.
+Node 0 election timer timed out, Starting election.
+Error occurred while sending RPC to Node 2.
+Error occurred while sending RPC to Node 1.
+Node 0 election timer timed out, Starting election.
+Vote granted for Node 0 by Node 1 in term 40.
+Error occurred while sending RPC to Node 2.
+Node 0 became the leader for term 40.
+Leader 0 sending heartbeat & Renewing Lease
+Node 0 (leader) received a GET ad request.
+Error occurred while sending RPC to Node 2.
+Node 0 (leader) committed the entry SET ad 12 38 to the state machine
+Node 0 (leader) committed the entry NO-OP 40 to the state machine
+Node 0 (leader) committed the entry GET ad 40 to the state machine
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 2.
+Leader 0 sending heartbeat & Renewing Lease
+Node 0 (leader) received a GET abc request.
+Error occurred while sending RPC to Node 2.
+Node 0 (leader) committed the entry GET abc 40 to the state machine
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 2.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 2.
+Node 0 (leader) received a GET abcd request.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 2.
+Node 0 (leader) committed the entry GET abcd 40 to the state machine
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 2.
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 2.
+Leader 0 sending heartbeat & Renewing Lease
+Node 0 (leader) received a GET abcd request.
+Error occurred while sending RPC to Node 2.
+Node 0 (leader) committed the entry GET abcd 40 to the state machine
+Leader 0 sending heartbeat & Renewing Lease
+Error occurred while sending RPC to Node 2.
+Error occurred while sending RPC to Node 1.
+Leader 0 lease expired. Stepping Down.

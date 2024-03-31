@@ -27,6 +27,7 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
         self.heartbeat_duration = 2
         self.no_of_heartbeats = 1
         self.heartbeat_received = False
+        self.set_request_success = False
 
         self.timer = Timer(self.heartbeat_duration, self.leader)
         self.leaseTimer = Timer(self.leader_lease, self.leader_step_down)
@@ -220,6 +221,7 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
                     self.commitLogIndex = i
                     self.commitLogTerm = self.log[i]
                 self.write_content(f"Term {self.current_term}, CommitIndex {self.commitLogIndex}, VotedFor {self.voted_for}", metadata=True)
+                self.set_request_success = True
 
                 self.leaseTimer.start()
             
@@ -257,6 +259,10 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
             response = stub.AppendEntries(request)
             if response.success:
                 self.no_of_heartbeats += 1
+            else:
+                if response.term > self.current_term:
+                    self.current_term = response.term
+                    self.leader_step_down(notOutdated=False)
             
             return response
         except Exception as e:
@@ -266,18 +272,18 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
 
     def AppendEntries(self, request, context):
         try:
-            self.write_content(f"Node {self.id} accepted AppendEntries RPC from {self.leader_id}.", dump=True)
+            # self.write_content(f"Node {self.id} accepted AppendEntries RPC from {self.leader_id}.", dump=True)
             response = raft_pb2.AppendEntriesResponse()
             response.term = self.current_term   # Stores previous term
             response.success = True             # Bullshit value
 
-            # if request.term < self.current_term:    # Leader has a lower term than follower. Reject the RPC.
-            #     self.write_content(f"Node {self.id} rejected AppendEntries (DUE TO OUTDATED LEADER) RPC from {self.leader_id}.", dump=True)
-            #     response.success = False
-            #     return response
-            # else:
-            #     self.write_content(f"Node {self.id} accepted AppendEntries RPC from {self.leader_id}.", dump=True)
-            #     response.success = True
+            if request.term < self.current_term:    # Leader has a lower term than follower. Reject the RPC.
+                self.write_content(f"Node {self.id} rejected AppendEntries (DUE TO OUTDATED LEADER) RPC from {self.leader_id}.", dump=True)
+                response.success = False
+                return response
+            else:
+                self.write_content(f"Node {self.id} accepted AppendEntries RPC from {self.leader_id}.", dump=True)
+                response.success = True
 
             self.current_term = request.term
             self.leader_id = request.leaderId
@@ -358,13 +364,16 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
         self.timer.start()
 
 
-    def leader_step_down(self):
+    def leader_step_down(self, notOutdated=True):
         """
         Steps down the leader.
         """
         self.leaseTimer.cancel()
         self.state = "Follower"
-        self.write_content(f"Leader {self.leader_id} lease renewal failed. Stepping Down.", dump=True)
+        if notOutdated:
+            self.write_content(f"Leader {self.leader_id} lease expired. Stepping Down.", dump=True)
+        else:
+            self.write_content(f"Stepping Down.", dump=True)
         # self.write_content(f"{self.id} Stepping down.", dump=True)
         # self.heartbeat_received = False
         self.restart_timer()
@@ -375,7 +384,6 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
         """
         Performs leader election.
         """
-        self.leaseTimer.cancel()
         self.end_time = time.time()
         # print("Time taken:", self.end_time - self.start_time)
         if self.heartbeat_received:
@@ -545,8 +553,15 @@ class RaftNode(raft_pb2_grpc.RaftNodeServicer):
             log = "SET " + key + " " + value + " " + str(self.current_term)
             self.log.append(log)
 
-            return raft_pb2.ServeClientResponse(data="Value set succesfully!", leader_id=self.leader_id, success=True)
-
+            # Initital a loop that waits for 5 seconds
+            start_time = time.time()
+            self.set_request_success = False
+            while time.time() - start_time < 5:
+                if self.set_request_success:
+                    self.set_request_success = False
+                    return raft_pb2.ServeClientResponse(data="Value set succesfully!", leader_id=self.leader_id, success=True)
+            return raft_pb2.ServeClientResponse(data="Value could not be set due to no majority!", leader_id=self.leader_id, success=False)
+                
 
     def ServeClient(self, request, context):
         # handle get, set, and getleader
