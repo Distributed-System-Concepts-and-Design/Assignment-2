@@ -604,8 +604,9 @@ def run_server():
         server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
         obj = RaftNode(ID, node_addresses)
         raft_pb2_grpc.add_RaftNodeServicer_to_server(obj, server)
-
-        server.add_insecure_port(node_addresses[ID])
+        # get the port of the current node
+        port = node_addresses[ID].split(":")[-1]
+        server.add_insecure_port("[::]:" + port)
         server.start()
         server.wait_for_termination()
     

@@ -146,22 +146,24 @@ def serve():
 
     while choice != 3:
         if choice == 0:
+            client.verbose = False
             status = client.find_leader()
             if status == -1:
                 print("Leader not present in Raft!")
             else:
                 print(f"Leader found at node: {client.leader_id}")
+            client.verbose = True
 
         elif choice == 1:
             key = input("Enter the key: ")
-            # client.verbose = False
+            client.verbose = False
             client.get(key)
             client.verbose = True
         
         elif choice == 2:
             key = input("Enter the key: ")
             value = input("Enter the value: ")
-            # client.verbose = False
+            client.verbose = False
             client.set(key, value)
             client.verbose = True
         
